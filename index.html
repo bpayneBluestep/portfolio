@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brandon Payne</title>
+  <meta name="description" content="Brandon Payne — portfolio">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#">Brandon Payne</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Hi, I'm Brandon.</h1>
+      <p>One line about what you do and who you do it for.</p>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>A short paragraph about your background, focus, and what you care about.</p>
+    </section>
+
+    <section id="work">
+      <h2>Work</h2>
+      <ul class="projects">
+        <li>
+          <h3>Project one</h3>
+          <p>What it is, what you did, and the result.</p>
+        </li>
+        <li>
+          <h3>Project two</h3>
+          <p>What it is, what you did, and the result.</p>
+        </li>
+        <li>
+          <h3>Project three</h3>
+          <p>What it is, what you did, and the result.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Brandon Payne</p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
