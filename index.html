@@ -4,58 +4,208 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Brandon Payne</title>
-  <meta name="description" content="Brandon Payne — portfolio">
+  <meta name="description" content="I started as a BlueStep user at a treatment program in southern Utah. Today I help run the company. This is how that happened.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#story">Skip to the story</a>
+
   <header class="site-header">
-    <a class="brand" href="#">Brandon Payne</a>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
+    <a class="brand" href="#top">Brandon Payne</a>
+    <nav aria-label="Primary">
+      <a href="#story">Story</a>
+      <a href="#next">What's next</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>Hi, I'm Brandon.</h1>
-      <p>One line about what you do and who you do it for.</p>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title" class="titles">
+        <span class="visually-hidden">Brandon Payne, Executive Director at BlueStep. Formerly </span>
+        <span class="title was" style="--i:0">Marketing Intern</span>
+        <span class="title was" style="--i:1">Marketing Analyst</span>
+        <span class="title was" style="--i:2">Director of Growth</span>
+        <span class="title was" style="--i:3">VP, Behavioral Healthcare</span>
+        <span class="title now" style="--i:4">Executive Director</span>
+      </h1>
+      <p class="hero-lede">
+        I started as a BlueStep user at a treatment program in southern Utah.
+        Today I help run the company. This is how that happened.
+      </p>
     </section>
 
-    <section id="about">
-      <h2>About</h2>
-      <p>A short paragraph about your background, focus, and what you care about.</p>
-    </section>
+    <div id="story" class="story">
 
-    <section id="work">
-      <h2>Work</h2>
-      <ul class="projects">
-        <li>
-          <h3>Project one</h3>
-          <p>What it is, what you did, and the result.</p>
-        </li>
-        <li>
-          <h3>Project two</h3>
-          <p>What it is, what you did, and the result.</p>
-        </li>
-        <li>
-          <h3>Project three</h3>
-          <p>What it is, what you did, and the result.</p>
-        </li>
-      </ul>
-    </section>
+      <article class="chapter" aria-labelledby="ch-2019">
+        <div class="chapter-year" aria-hidden="true">2019</div>
+        <div class="chapter-body">
+          <p class="chapter-meta">Havenwood Academy, Cedar City, Utah</p>
+          <h2 id="ch-2019">The user</h2>
+          <p>
+            I took a marketing internship at Havenwood Academy, a residential treatment
+            program in Cedar City. Everything there ran on BlueStep: clinical notes,
+            admissions, the census, the reports leadership read every Monday morning.
+          </p>
+          <p>
+            And like most software at most treatment programs, it did some of what people
+            needed while staff worked around the rest. I started fixing the rest. Nobody
+            asked me to. I taught myself to build on the platform one problem at a time:
+            a report a director couldn't get, a form that ate a therapist's afternoon.
+          </p>
+          <p>
+            Within a couple of years I was the person on campus who customized BlueStep.
+            I never learned software from the vendor's side. I learned it from the
+            people who had to use it.
+          </p>
+        </div>
+      </article>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+      <article class="chapter" aria-labelledby="ch-2021">
+        <div class="chapter-year" aria-hidden="true">2021</div>
+        <div class="chapter-body">
+          <p class="chapter-meta">Director of Growth, Havenwood Academy</p>
+          <h2 id="ch-2021">The operator</h2>
+          <p>
+            I finished my MBA and joined Havenwood's leadership team as Director of Growth,
+            owning retention. When I started that work, about three in ten students
+            completed the program.
+          </p>
+          <figure class="shift" aria-label="Program completion rate went from about 30 percent to about 90 percent">
+            <span class="shift-from">30%</span>
+            <span class="shift-to">90%</span>
+            <figcaption>Program completion, then and now</figcaption>
+          </figure>
+          <p>
+            I started the retention work that began that turn. Today it sits around nine
+            in ten. The lesson stuck with me: the most important problems in a business are
+            rarely software problems first. But software is usually how you fix them for
+            good.
+          </p>
+          <p>
+            In 2022 I also joined the founding team of Engage, a new young adult program,
+            and designed and built its first website before it served its first student.
+          </p>
+        </div>
+      </article>
+
+      <article class="chapter" aria-labelledby="ch-2022">
+        <div class="chapter-year" aria-hidden="true">2022</div>
+        <div class="chapter-body">
+          <p class="chapter-meta">VP of Behavioral Healthcare, Xantie Analytics</p>
+          <h2 id="ch-2022">The builder</h2>
+          <p>
+            Xantie, a data consulting firm in Salt Lake City, hired me to run its behavioral
+            healthcare practice. The practice was me and one anchor analytics contract.
+            Three months in, that contract ended.
+          </p>
+          <p>
+            I could have gone looking for more consulting. I bet on product instead. As a
+            one-person business unit I owned sales, product, engineering, customer success
+            and accounts, and built two products that I sold directly to residential
+            treatment centers:
+          </p>
+          <ul class="built">
+            <li>
+              <strong>An admissions CRM</strong> built for how programs actually work:
+              families, referral partners, and a pipeline that runs on relationships.
+            </li>
+            <li>
+              <strong>An outcomes platform</strong> that schedules every patient's
+              assessments (PHQ-9, YOQ or a facility's own surveys) from their admit and
+              discharge dates, then shows clinicians whether treatment is working.
+            </li>
+          </ul>
+          <p>
+            Both ran on top of BlueStep's own platform. And both did the job better than
+            BlueStep's native tools.
+          </p>
+        </div>
+      </article>
+
+      <article class="chapter chapter-turn" aria-labelledby="ch-2025">
+        <div class="chapter-year" aria-hidden="true">2025</div>
+        <div class="chapter-body">
+          <p class="chapter-meta">BlueStep Systems acquires Xantie's behavioral healthcare business</p>
+          <h2 id="ch-2025">The software I started customizing as an intern bought the software I built on top of it.</h2>
+          <p>
+            In early 2025 BlueStep acquired the business, and I joined as Executive
+            Director: the first dedicated executive operator in the company's twenty-year
+            history.
+          </p>
+        </div>
+      </article>
+
+      <article class="chapter" aria-labelledby="ch-now">
+        <div class="chapter-year" aria-hidden="true">Now</div>
+        <div class="chapter-body">
+          <p class="chapter-meta">Executive Director, BlueStep Systems</p>
+          <h2 id="ch-now">The rebuild</h2>
+          <p>
+            BlueStep had been building each client's system by hand. That kept margins
+            razor-thin and made every new customer a custom project. Over twelve months we
+            rebuilt it into a modular suite that ships ready to use and gets configured,
+            not coded, for each program.
+          </p>
+          <p>
+            I led that rebuild and wrote roughly half of its code myself while running the
+            day-to-day business: pricing, hiring, implementations and the P&amp;L.
+            Onboarding got faster, per-client engineering dropped, and the scaling ceiling
+            that had capped growth for years went away.
+          </p>
+          <div class="shipped">
+            <p class="shipped-intro">Some of what shipped along the way:</p>
+            <ul>
+              <li>BlueIQ, our AI product line, which I built end to end: voice-recorded shift notes written up as clinical documentation, an assistant that answers from the chart with citations, and a summary of each day waiting for staff every morning</li>
+              <li>A native e-signature platform, rolled out across our production orgs with zero silent failures</li>
+              <li>An application builder that lets programs design their own admissions forms and maps every answer into the chart</li>
+              <li>Native dashboards that replaced paid Power BI embeds, including a program-wide incident compliance view</li>
+              <li>Telehealth integrations running at more than twenty facilities</li>
+              <li>The first insurance claim submitted straight from the platform to a clearinghouse</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article id="next" class="chapter chapter-next" aria-labelledby="ch-next">
+        <div class="chapter-year" aria-hidden="true">Next</div>
+        <div class="chapter-body">
+          <p class="chapter-meta">In design</p>
+          <h2 id="ch-next">A marketplace for referrals</h2>
+          <p>
+            Educational consultants help families find the right program. Programs depend
+            on the right referrals. Today both sides keep their own CRMs, and the
+            handoff between them happens over phone calls and email.
+          </p>
+          <p>
+            I'm designing the marketplace that connects them: a CRM for consultants and a
+            CRM for programs, with referrals, availability and outcomes moving between the
+            two. Two sides, each needing its own view of the same truth.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <section class="throughline" aria-labelledby="throughline-title">
+      <h2 id="throughline-title">I've been the user, the operator, the builder and the executive.</h2>
+      <p>
+        So I hear a problem the way the person living it does, I can see the software that
+        fixes it, and I know what it takes to build it and run the business around it.
+      </p>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Brandon Payne</p>
+  <footer id="contact" class="site-footer">
+    <h2>Let's talk.</h2>
+    <p class="contact-links">
+      <a href="mailto:paynebrandon4@gmail.com">paynebrandon4@gmail.com</a>
+      <a href="https://www.linkedin.com/in/payne-brandon">LinkedIn</a>
+    </p>
+    <p class="fineprint">Brandon Payne, MBA. Utah.</p>
   </footer>
-
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
