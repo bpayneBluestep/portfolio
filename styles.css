@@ -203,3 +203,97 @@ a:hover { text-decoration-thickness: 2px; }
   .chapter-year { position: static; margin-bottom: 16px; font-size: 3rem; }
   .chapter-body, .chapter-turn .chapter-body { grid-column: 1; }
 }
+
+/* Notable projects */
+.projects { border-top: 1px solid var(--rule); padding: clamp(72px, 14vh, 160px) var(--gutter) 0; }
+
+.projects-head h2 {
+  margin: 0 0 clamp(48px, 8vh, 96px);
+  font-size: clamp(2.75rem, 7vw, 6rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.primer,
+.project {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 40rem);
+  column-gap: var(--gutter);
+  padding: clamp(48px, 8vh, 88px) 0;
+  border-top: 1px solid var(--rule);
+}
+
+.primer h3,
+.project h3 {
+  margin: 0;
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.primer { background: transparent; }
+.primer-body p { margin: 0 0 1.1em; }
+
+.terms { margin: 32px 0 0; }
+.terms div {
+  display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 16px;
+  padding: 14px 0; border-top: 1px solid var(--rule);
+}
+.terms div:last-child { border-bottom: 1px solid var(--rule); }
+.terms dt { font-family: var(--sans); font-weight: 600; font-size: 0.95rem; padding-top: 0.2em; }
+.terms dd { margin: 0; font-size: 1.05rem; line-height: 1.5; }
+
+.project-side { align-self: start; position: sticky; top: 32px; }
+.project-meta { margin: 10px 0 0; font-family: var(--sans); font-size: 0.95rem; color: var(--muted); max-width: 18rem; line-height: 1.45; }
+
+.project-body > p { margin: 0 0 1.1em; }
+.project-problem { font-size: 1.3rem; line-height: 1.55; }
+
+.project-lead h3 { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--blue); letter-spacing: -0.025em; }
+
+.project-points { margin: 0 0 1.4em; padding: 0; list-style: none; }
+.project-points li { padding: 16px 0; border-top: 1px solid var(--rule); font-size: 1.05rem; line-height: 1.55; }
+.project-points li:last-child { border-bottom: 1px solid var(--rule); }
+.project-points strong { font-weight: 600; }
+.project-under { font-size: 1rem; color: var(--muted); }
+
+/* Spoken note becomes a clinical note */
+.transform {
+  margin: 36px 0 40px;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 0;
+  border: 1px solid var(--rule); border-radius: 12px; overflow: hidden;
+  background: #fff;
+}
+.transform > div { padding: 24px; }
+.transform-said { background: var(--paper); border-right: 1px solid var(--rule); }
+.transform-label { margin: 0 0 12px; font-family: var(--sans); font-size: 0.9rem; color: var(--muted); }
+.transform blockquote { margin: 0; font-style: italic; font-size: 1.05rem; line-height: 1.55; }
+.transform dl { margin: 0; }
+.transform dl div { padding: 8px 0 8px 14px; border-left: 2px solid var(--blue); margin-bottom: 10px; }
+.transform dt { font-family: var(--sans); font-weight: 600; font-size: 0.9rem; }
+.transform dd { margin: 2px 0 0; font-size: 1rem; line-height: 1.5; }
+.transform figcaption {
+  grid-column: 1 / -1; padding: 12px 24px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans); font-size: 0.85rem; color: var(--muted);
+}
+
+/* Two-sided diagram */
+.market { margin: 32px 0 36px; color: var(--blue); }
+.market svg { width: 100%; height: auto; display: block; }
+.market .node { fill: #fff; stroke: var(--ink); stroke-width: 1.5; }
+.market .node-title { font-family: var(--serif); font-size: 24px; fill: var(--ink); }
+.market .node-sub { font-family: var(--sans); font-size: 15px; fill: var(--muted); }
+.market .flow { stroke: currentColor; stroke-width: 2; }
+.market .flow-label { font-family: var(--sans); font-size: 15px; fill: var(--ink); }
+
+@media (max-width: 760px) {
+  .primer, .project { grid-template-columns: minmax(0, 1fr); }
+  .project-side { position: static; margin-bottom: 20px; }
+  .primer h3 { margin-bottom: 20px; }
+  .terms div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .transform { grid-template-columns: minmax(0, 1fr); }
+  .transform-said { border-right: none; border-bottom: 1px solid var(--rule); }
+}

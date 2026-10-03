@@ -17,7 +17,7 @@
     <a class="brand" href="#top">Brandon Payne</a>
     <nav aria-label="Primary">
       <a href="#story">Story</a>
-      <a href="#next">What's next</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -137,12 +137,12 @@
           <div class="shipped">
             <p class="shipped-intro">Some of what shipped along the way:</p>
             <ul>
-              <li>BlueIQ, our AI product line, which I built end to end: voice-recorded shift notes written up as clinical documentation, an assistant that answers from the chart with citations, and a summary of each day waiting for staff every morning</li>
-              <li>A native e-signature platform, rolled out across our production orgs with zero silent failures</li>
-              <li>An application builder that lets programs design their own admissions forms and maps every answer into the chart</li>
-              <li>Native dashboards that replaced paid Power BI embeds, including a program-wide incident compliance view</li>
               <li>Telehealth integrations running at more than twenty facilities</li>
               <li>The first insurance claim submitted straight from the platform to a clearinghouse</li>
+              <li>Native dashboards that replaced paid Power BI embeds</li>
+              <li>An in-house survey tool that replaced a paid Typeform subscription</li>
+              <li>A drag-and-drop document manager on every client and lead record</li>
+              <li>Treatment targets that score progress inside every session note</li>
             </ul>
           </div>
         </div>
@@ -154,19 +154,224 @@
           <p class="chapter-meta">In design</p>
           <h2 id="ch-next">A marketplace for referrals</h2>
           <p>
-            Educational consultants help families find the right program. Programs depend
-            on the right referrals. Today both sides keep their own CRMs, and the
-            handoff between them happens over phone calls and email.
-          </p>
-          <p>
-            I'm designing the marketplace that connects them: a CRM for consultants and a
-            CRM for programs, with referrals, availability and outcomes moving between the
-            two. Two sides, each needing its own view of the same truth.
+            Now I'm designing a two-sided marketplace that connects the educational
+            consultants who refer families with the programs that serve them. More on it below.
           </p>
         </div>
       </article>
 
     </div>
+
+    <section id="projects" class="projects" aria-labelledby="projects-title">
+      <header class="projects-head">
+        <h2 id="projects-title">Notable projects</h2>
+      </header>
+
+      <div class="primer" aria-labelledby="primer-title">
+        <h3 id="primer-title">First, what BlueStep is</h3>
+        <div class="primer-body">
+          <p>
+            BlueStep is the software that runs behavioral health programs: residential
+            treatment centers, therapeutic boarding schools and young adult programs, where
+            teenagers and young adults live for months while they get treatment.
+          </p>
+          <p>
+            A program like that is a hospital, a school, a dorm and a business at once.
+            BlueStep is the system all of it runs on: the clinical chart, admissions, the
+            school, billing, staffing and the portal parents log into. Every program is
+            different, so every part of it has to be configurable.
+          </p>
+          <dl class="terms">
+            <div><dt>Program</dt><dd>A residential treatment center or therapeutic school. Our customers.</dd></div>
+            <div><dt>Direct-care staff</dt><dd>The people on shift with residents day and night. Not clinicians, and rarely at a desk.</dd></div>
+            <div><dt>Shift note</dt><dd>What staff write at the end of every shift about each resident. It becomes part of the medical record.</dd></div>
+            <div><dt>Milieu</dt><dd>The daily living environment of the program: meals, school, groups, free time.</dd></div>
+            <div><dt>Educational consultant</dt><dd>An independent advisor families hire to find the right program for their child. The biggest source of referrals in the industry.</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <article class="project project-lead" aria-labelledby="p-blueiq">
+        <div class="project-side">
+          <h3 id="p-blueiq">BlueIQ</h3>
+          <p class="project-meta">BlueStep's AI product line. I designed and built every feature.</p>
+        </div>
+        <div class="project-body">
+          <p class="project-problem">
+            Direct-care staff spend their shifts on their feet with residents, then sit down
+            at the end and type notes that become a medical record. Clinicians and directors
+            then read hundreds of those notes to figure out what actually happened.
+          </p>
+          <p>
+            BlueIQ puts AI where that time goes. Staff talk instead of type, and leadership
+            gets the picture without reading everything.
+          </p>
+
+          <figure class="transform">
+            <div class="transform-said">
+              <p class="transform-label">What staff say</p>
+              <blockquote>"Rough night for him after the phone call home. Shut down at dinner, wouldn't eat. I sat with him a while, we did some breathing, and he ended up playing cards with the group before bed."</blockquote>
+            </div>
+            <div class="transform-wrote">
+              <p class="transform-label">What BlueIQ writes</p>
+              <dl>
+                <div><dt>Behavior</dt><dd>Resident became withdrawn following a phone call home and declined dinner.</dd></div>
+                <div><dt>Intervention</dt><dd>Staff provided one-on-one support and guided breathing exercises.</dd></div>
+                <div><dt>Response</dt><dd>Resident re-engaged and joined a group activity before bedtime.</dd></div>
+              </dl>
+            </div>
+            <figcaption>An invented example. Staff review every note before it saves.</figcaption>
+          </figure>
+
+          <ul class="project-points">
+            <li><strong>Record with BlueIQ.</strong> Staff dictate in the browser, and the note comes back in the behavior, intervention and response structure that insurers look for. The model is told to never add anything the staff member didn't say.</li>
+            <li><strong>An assistant that answers from the chart.</strong> Ask about one resident or the whole program and get answers with citations back to the records they came from. It runs as the person asking, so it can only see what they're allowed to see.</li>
+            <li><strong>The daily milieu summary.</strong> Every morning at 5, leadership gets a plain-language recap of the previous day, built from the sources each program chooses.</li>
+            <li><strong>Utilization review drafts.</strong> The narrative sections insurers require get drafted from the clinical record, so clinicians edit instead of starting from a blank page.</li>
+          </ul>
+          <p class="project-under">
+            Under the hood: per-program usage credits so AI cost is metered, and a move from
+            our own OpenAI integration to the platform's native AI once it shipped, with
+            OpenAI kept as a fallback.
+          </p>
+        </div>
+      </article>
+
+      <article class="project" aria-labelledby="p-market">
+        <div class="project-side">
+          <h3 id="p-market">The referral marketplace</h3>
+          <p class="project-meta">Connecting educational consultants and programs. In design.</p>
+        </div>
+        <div class="project-body">
+          <p class="project-problem">
+            Educational consultants place families with programs. Programs live on those
+            referrals. But each side tracks the relationship in its own CRM, and everything
+            between them happens over phone calls and email: who has a bed open, who fits
+            this kid, how the last placement turned out.
+          </p>
+          <figure class="market" aria-label="Diagram: a consultant CRM and a program CRM, with referrals flowing to programs, and availability and outcomes flowing back to consultants">
+            <svg viewBox="0 0 640 220" role="img" aria-hidden="true">
+              <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+                </marker>
+              </defs>
+              <rect x="1" y="40" width="190" height="140" rx="10" class="node"/>
+              <text x="96" y="104" class="node-title" text-anchor="middle">Consultant</text>
+              <text x="96" y="128" class="node-sub" text-anchor="middle">CRM</text>
+              <rect x="449" y="40" width="190" height="140" rx="10" class="node"/>
+              <text x="544" y="104" class="node-title" text-anchor="middle">Program</text>
+              <text x="544" y="128" class="node-sub" text-anchor="middle">CRM</text>
+              <line x1="200" y1="78" x2="440" y2="78" class="flow" marker-end="url(#arrow)"/>
+              <text x="320" y="66" class="flow-label" text-anchor="middle">Referrals</text>
+              <line x1="440" y1="122" x2="200" y2="122" class="flow" marker-end="url(#arrow)"/>
+              <text x="320" y="112" class="flow-label" text-anchor="middle">Openings</text>
+              <line x1="440" y1="162" x2="200" y2="162" class="flow" marker-end="url(#arrow)"/>
+              <text x="320" y="152" class="flow-label" text-anchor="middle">Outcomes</text>
+            </svg>
+          </figure>
+          <p>
+            I'm designing the layer that connects them. Consultants get a CRM built for how
+            they work, programs keep theirs, and the referral itself becomes a shared record
+            that both sides can see and act on. Openings and outcomes flow back, so
+            consultants can send families to programs with real evidence.
+          </p>
+          <p>
+            The hard part is the same as in any two-sided product: each side needs its own
+            view of the same truth, and neither should see what isn't theirs.
+          </p>
+        </div>
+      </article>
+
+      <article class="project" aria-labelledby="p-modular">
+        <div class="project-side">
+          <h3 id="p-modular">One product, many programs</h3>
+          <p class="project-meta">The platform rebuild and how it ships.</p>
+        </div>
+        <div class="project-body">
+          <p class="project-problem">
+            BlueStep used to build every customer's system by hand. Each new program was a
+            custom project, margins were thin, and a fix for one customer never reached the
+            others.
+          </p>
+          <p>
+            We rebuilt it as one modular product. Each program turns features on or off and
+            sets up its own roles, so a single change to a role updates around fifty
+            permissions for everyone who holds it.
+          </p>
+          <p>
+            Then I built how it ships. Changes are made once in a source system and rolled
+            out by script to every production customer, with a test customer first and a
+            separate read-only check afterward that confirms each one actually landed.
+          </p>
+        </div>
+      </article>
+
+      <article class="project" aria-labelledby="p-esign">
+        <div class="project-side">
+          <h3 id="p-esign">Agreements</h3>
+          <p class="project-meta">E-signatures, built into the platform.</p>
+        </div>
+        <div class="project-body">
+          <p class="project-problem">
+            Admissions runs on signatures: consent forms, financial agreements, releases.
+            Programs were paying for a separate e-signature service and then copying
+            signed documents back into the chart by hand.
+          </p>
+          <p>
+            I built the whole flow inside BlueStep: a template studio where programs place
+            signature fields, signing from inside the record or from a public link sent to
+            parents, and a background job that files every completed agreement where it
+            belongs.
+          </p>
+          <p>
+            It went out to eight customers at once, and every record was checked afterward.
+            Nothing failed without someone knowing.
+          </p>
+        </div>
+      </article>
+
+      <article class="project" aria-labelledby="p-apps">
+        <div class="project-side">
+          <h3 id="p-apps">The application builder</h3>
+          <p class="project-meta">Admissions forms programs design themselves.</p>
+        </div>
+        <div class="project-body">
+          <p class="project-problem">
+            Every program wants its own admissions application, and every change used to
+            mean an engineer. Then someone retyped the answers into the chart.
+          </p>
+          <p>
+            Programs now build their applications with drag and drop, including questions
+            that appear only when an earlier answer calls for them. Families fill them out
+            on a public site that won't accept the same submission twice and confirms by
+            email. Every answer maps into the right place in the chart automatically.
+          </p>
+        </div>
+      </article>
+
+      <article class="project" aria-labelledby="p-incident">
+        <div class="project-side">
+          <h3 id="p-incident">Incident compliance dashboard</h3>
+          <p class="project-meta">Seeing patterns across a whole program.</p>
+        </div>
+        <div class="project-body">
+          <p class="project-problem">
+            Programs document every incident, but leadership couldn't see the patterns:
+            which teams, which times of day, which kinds of incidents were rising.
+          </p>
+          <p>
+            I designed a dashboard that shows trends against the previous period, team
+            scorecards, incidents by category, and a heatmap of day of week against hour.
+            Every chart has a table view behind it, and it can all be exported.
+          </p>
+          <p>
+            While building it, I found duplicate records that had been inflating every
+            number by about 12%. A dashboard is only as honest as its data.
+          </p>
+        </div>
+      </article>
+    </section>
 
     <section class="throughline" aria-labelledby="throughline-title">
       <h2 id="throughline-title">I've been the user, the operator, the builder and the executive.</h2>
