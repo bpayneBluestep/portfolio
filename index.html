@@ -8,13 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=202610040937">
-  <link rel="stylesheet" href="demo.css?v=202610040937">
+  <link rel="stylesheet" href="styles.css?v=202610040944">
+  <link rel="stylesheet" href="demo.css?v=202610040944">
 </head>
 <body>
   <a class="skip" href="#story">Skip to the story</a>
 
-  <header class="site-header">
+  <header class="site-header wrap">
     <a class="brand" href="#top">Brandon Payne</a>
     <nav aria-label="Primary">
       <a href="#story">Story</a>
@@ -24,7 +24,7 @@
   </header>
 
   <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero wrap" aria-labelledby="hero-title">
       <h1 id="hero-title" class="titles">
         <span class="visually-hidden">Brandon Payne, Executive Director at BlueStep. Formerly </span>
         <span class="title was" style="--i:0">Marketing Analyst</span>
@@ -38,100 +38,117 @@
       </p>
     </section>
 
-    <div id="story" class="story">
+    <!-- Story: every chapter is the same row. Label column on the left, content on the right. -->
+    <section id="story" class="section" aria-labelledby="story-title">
+      <div class="wrap">
+        <h2 id="story-title" class="section-title">The story</h2>
 
-      <article class="chapter" aria-labelledby="ch-2019">
-        <div class="chapter-year" aria-hidden="true">2019</div>
-        <div class="chapter-body">
-          <p class="chapter-meta">Director of Growth, Havenwood Academy, Cedar City, Utah</p>
-          <h2 id="ch-2019">The user</h2>
-          <p>
-            I spent three years at Havenwood Academy, a residential treatment program in
-            Cedar City, and finished as Director of Growth on the leadership team after my
-            MBA. Everything there ran on BlueStep: clinical notes, admissions, the census,
-            the reports leadership read every Monday morning.
-          </p>
-          <p>
-            And like most software at most treatment programs, it did some of what people
-            needed while staff worked around the rest. I started fixing the rest. Nobody
-            asked me to. I taught myself to build on the platform one problem at a time:
-            a report a director couldn't get, a form that ate a therapist's afternoon.
-          </p>
-          <p>
-            By the time I was running growth, I was also the person on campus who
-            customized BlueStep. Doing both taught me that the most important problems in
-            a business are rarely software problems first, but software is usually how you
-            fix them for good. I never learned software from the vendor's side. I learned
-            it from the people who had to use it.
-          </p>
-          <p>
-            In 2022 I also joined the founding team of Engage, a new young adult program,
-            and designed and built its first website before it served its first student.
-          </p>
-        </div>
-      </article>
+        <article class="row" aria-labelledby="ch-2019">
+          <div class="row-label">
+            <p class="year" aria-hidden="true">2019</p>
+            <p class="label">Director of Growth<br>Havenwood Academy</p>
+          </div>
+          <div class="row-content">
+            <h3 id="ch-2019" class="item-title">The user</h3>
+            <div class="prose">
+              <p>
+                I spent three years at Havenwood Academy, a residential treatment program in
+                Cedar City, Utah, and finished as Director of Growth on the leadership team after
+                my MBA. Everything there ran on BlueStep: clinical notes, admissions, the census,
+                the reports leadership read every Monday morning.
+              </p>
+              <p>
+                Like most software at most treatment programs, it did some of what people needed
+                while staff worked around the rest. I started fixing the rest. Nobody asked me to.
+                I taught myself to build on the platform one problem at a time: a report a director
+                couldn't get, a form that ate a therapist's afternoon.
+              </p>
+              <p>
+                Doing both jobs taught me that the most important problems in a business are rarely
+                software problems first, but software is usually how you fix them for good. I never
+                learned software from the vendor's side. I learned it from the people who had to
+                use it.
+              </p>
+              <p>
+                In 2022 I also joined the founding team of Engage, a new young adult program, and
+                designed and built its first website before it served its first student.
+              </p>
+            </div>
+          </div>
+        </article>
 
-      <article class="wide" aria-labelledby="ch-2022">
-        <div class="wide-head">
-          <div class="chapter-year" aria-hidden="true">2022</div>
-          <div>
-            <p class="chapter-meta">VP of Behavioral Healthcare, Xantie Analytics</p>
-            <h2 id="ch-2022">The builder</h2>
+        <article class="row" aria-labelledby="ch-2022">
+          <div class="row-label">
+            <p class="year" aria-hidden="true">2022</p>
+            <p class="label">VP of Behavioral Healthcare<br>Xantie Analytics</p>
           </div>
-        </div>
-        <p class="wide-lede">
-          Xantie hired me to run its behavioral healthcare practice. The practice was me and
-          one analytics contract. Three months in, that contract ended. I bet on product
-          instead of more consulting.
-        </p>
-        <p class="wide-text">
-          As a one-person business unit I owned sales, product, engineering, customer success
-          and accounts, and built two products that I sold directly to residential treatment
-          centers.
-        </p>
-        <div class="pair">
-          <div>
-            <h3>An admissions CRM</h3>
-            <p>Built for how programs actually work: families, referral partners, and a pipeline that runs on relationships.</p>
+          <div class="row-content">
+            <h3 id="ch-2022" class="item-title">The builder</h3>
+            <p class="lede">
+              The practice I was hired to run was me and one analytics contract. Three months in,
+              that contract ended. I bet on product instead of more consulting.
+            </p>
+            <div class="prose">
+              <p>
+                As a one-person business unit I owned sales, product, engineering, customer success
+                and accounts, and built two products that I sold directly to residential treatment
+                centers. Both ran on BlueStep's own platform, and both did the job better than
+                BlueStep's native tools.
+              </p>
+            </div>
+            <dl class="pairs">
+              <div>
+                <dt>An admissions CRM</dt>
+                <dd>Built for how programs actually work: families, referral partners, and a pipeline that runs on relationships.</dd>
+              </div>
+              <div>
+                <dt>An outcomes platform</dt>
+                <dd>Schedules every patient's assessments (PHQ-9, YOQ or a facility's own surveys) from their admit and discharge dates, then shows clinicians whether treatment is working.</dd>
+              </div>
+            </dl>
           </div>
-          <div>
-            <h3>An outcomes platform</h3>
-            <p>Schedules every patient's assessments (PHQ-9, YOQ or a facility's own surveys) from their admit and discharge dates, then shows clinicians whether treatment is working.</p>
-          </div>
-        </div>
-        <p class="wide-close">Both ran on BlueStep's own platform, and both did the job better than BlueStep's native tools.</p>
-      </article>
+        </article>
+      </div>
 
       <article class="turn" aria-labelledby="ch-2025">
-        <p class="turn-meta">2025. BlueStep Systems acquires Xantie's behavioral healthcare business.</p>
-        <h2 id="ch-2025">The software I started customizing as a user bought the software I built on top of it.</h2>
-        <p class="turn-text">
-          I joined as Executive Director: the first dedicated executive operator in the
-          company's twenty-year history.
-        </p>
+        <div class="wrap row">
+          <div class="row-label">
+            <p class="year" aria-hidden="true">2025</p>
+            <p class="label">BlueStep acquires Xantie's behavioral healthcare business</p>
+          </div>
+          <div class="row-content">
+            <h3 id="ch-2025" class="statement">The software I started customizing as a user bought the software I built on top of it.</h3>
+            <div class="prose">
+              <p>I joined as Executive Director: the first dedicated executive operator in the company's twenty-year history.</p>
+            </div>
+          </div>
+        </div>
       </article>
 
-      <article class="rebuild" aria-labelledby="ch-now">
-        <p class="chapter-meta">Now. Executive Director, BlueStep Systems</p>
-        <h2 id="ch-now">The rebuild</h2>
-        <div class="rebuild-cols">
-          <div class="rebuild-text">
-            <p>
-              BlueStep had been building each client's system by hand. That kept margins
-              razor-thin and made every new customer a custom project. Over twelve months we
-              rebuilt it into a modular suite that ships ready to use and gets configured,
-              not coded, for each program.
-            </p>
-            <p>
-              I led that rebuild and wrote roughly half of its code myself while running the
-              day-to-day business: pricing, hiring, implementations and the P&amp;L.
-              Onboarding got faster, per-client engineering dropped, and the scaling ceiling
-              that had capped growth for years went away.
-            </p>
+      <div class="wrap">
+        <article class="row row-after-band" aria-labelledby="ch-now">
+          <div class="row-label">
+            <p class="year" aria-hidden="true">Now</p>
+            <p class="label">Executive Director<br>BlueStep Systems</p>
           </div>
-          <div class="shipped">
-            <p class="shipped-intro">Some of what shipped along the way</p>
-            <ul>
+          <div class="row-content">
+            <h3 id="ch-now" class="item-title">The rebuild</h3>
+            <div class="prose">
+              <p>
+                BlueStep had been building each client's system by hand. That kept margins
+                razor-thin and made every new customer a custom project. Over twelve months we
+                rebuilt it into a modular suite that ships ready to use and gets configured, not
+                coded, for each program.
+              </p>
+              <p>
+                I led that rebuild and wrote roughly half of its code myself while running the
+                day-to-day business: pricing, hiring, implementations and the P&amp;L. Onboarding
+                got faster, per-client engineering dropped, and the scaling ceiling that had capped
+                growth for years went away.
+              </p>
+            </div>
+            <p class="list-label">Some of what shipped along the way</p>
+            <ul class="list">
               <li>Telehealth integrations running at more than twenty facilities</li>
               <li>The first insurance claim submitted straight from the platform to a clearinghouse</li>
               <li>Native dashboards that replaced paid Power BI embeds</li>
@@ -140,238 +157,274 @@
               <li>Treatment targets that score progress inside every session note</li>
             </ul>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <aside id="next" class="next" aria-labelledby="ch-next">
-        <h2 id="ch-next">Next</h2>
-        <p>
-          A two-sided marketplace connecting the educational consultants who refer families
-          with the programs that serve them. It's in design now, and it's one of the projects
-          below.
-        </p>
-      </aside>
-
-    </div>
-
-    <section id="projects" class="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title" class="projects-title">Notable projects</h2>
-
-      <div class="primer" aria-labelledby="primer-title">
-        <h3 id="primer-title" class="primer-kicker">First, what BlueStep is</h3>
-        <p class="primer-statement">
-          BlueStep runs the programs where teenagers and young adults live for months while
-          they get treatment. Each one is a hospital, a school, a dorm and a business at once.
-        </p>
-        <p class="primer-text">
-          BlueStep is the system all of it runs on: the clinical chart, admissions, the school,
-          billing, staffing and the portal parents log into. Every program is different, so
-          every part of it has to be configurable. A few terms you'll see below:
-        </p>
-        <dl class="terms">
-          <div><dt>Program</dt><dd>A residential treatment center or therapeutic school. Our customers.</dd></div>
-          <div><dt>Direct-care staff</dt><dd>The people on shift with residents day and night. Rarely at a desk.</dd></div>
-          <div><dt>Shift note</dt><dd>What staff write about each resident every shift. It becomes part of the medical record.</dd></div>
-          <div><dt>Milieu</dt><dd>The daily living environment: meals, school, groups, free time.</dd></div>
-          <div><dt>Educational consultant</dt><dd>An advisor families hire to find the right program. The industry's biggest source of referrals.</dd></div>
-        </dl>
-      </div>
-
-      <article class="feature" aria-labelledby="p-blueiq">
-        <div class="feature-head">
-          <h3 id="p-blueiq">BlueIQ</h3>
-          <p class="project-meta">BlueStep's AI product line. I designed and built every feature.</p>
-        </div>
-        <p class="feature-problem">
-          Direct-care staff spend their shifts on their feet with residents, then sit down at
-          the end and type notes that become a medical record. Clinicians and directors then
-          read hundreds of those notes to figure out what actually happened. BlueIQ puts AI
-          where that time goes.
-        </p>
-          <figure class="demo" aria-label="Interactive demo of Record with BlueIQ">
-            <p class="demo-intro">Try it. Press Record with BlueIQ, then Record. No microphone needed; the recording is simulated.</p>
-            <div id="biq-demo" class="demo-frame">
-              <div class="bs-bar">
-                <span class="bs-bar-title">Shift Notes</span>
-                <span class="bs-bar-meta">Demo Student, Evening shift</span>
-              </div>
-              <div class="bs-form">
-                <div class="bs-card">
-                  <div class="bs-row">
-                    <div class="bs-label">BlueIQ</div>
-                    <div class="bs-value">
-                      <div class="biq-root">
-                        <button type="button" class="biq-launch"><span class="biq-launch-spark"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/></svg></span><span class="biq-launch-label">Record with <span class="biq-brand">BlueIQ</span></span></button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="bs-row">
-                    <div class="bs-label">Summary</div>
-                    <div class="bs-value"><div class="bs-field" data-field="summary" data-placeholder="What happened this shift"></div></div>
-                  </div>
-                  <div class="bs-row">
-                    <div class="bs-label">Strengths</div>
-                    <div class="bs-value"><div class="bs-field" data-field="strengths" data-placeholder="What went well"></div></div>
-                  </div>
-                  <div class="bs-row">
-                    <div class="bs-label">Concerns</div>
-                    <div class="bs-value"><div class="bs-field" data-field="concerns" data-placeholder="Anything the team should know"></div></div>
-                  </div>
-                </div>
-                <div class="bs-actions"><button type="button" class="bs-save" disabled>Save</button></div>
-              </div>
-
-              <div class="biq-overlay" hidden>
-                <div class="biq-panel" role="dialog" aria-modal="true" aria-label="BlueIQ Shift Note">
-                  <div class="biq-panel-head">
-                    <div class="biq-panel-title"><span class="biq-live-dot"></span><span><span class="biq-brand">BlueIQ</span> Shift Note</span></div>
-                    <button type="button" class="biq-collapse" aria-label="Close">&times;</button>
-                  </div>
-                  <div class="biq-panel-body">
-                    <p class="biq-hint">Speak your shift notes for this student. When you stop, BlueIQ fills the <strong>Summary</strong>, <strong>Strengths</strong>, and <strong>Concerns</strong> boxes from what you said. Review and edit before saving.</p>
-                    <div class="biq-controls">
-                      <button type="button" id="biq-record" class="biq-btn"><span class="biq-dot"></span><span class="biq-btn-label">Record</span></button>
-                      <button type="button" id="biq-rerecord" class="biq-btn is-secondary" hidden><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 4v6h6"/><path d="M3.5 9a9 9 0 1 1-.5 5"/></svg><span>Re-record</span></button>
-                      <span class="biq-timer">00:00</span>
-                      <div class="biq-viz" aria-hidden="true"></div>
-                      <span class="biq-status" role="status">Idle</span>
-                    </div>
-                    <div class="biq-transcript-wrap" hidden>
-                      <div class="biq-label">What BlueIQ heard (not shown on the saved note)</div>
-                      <div class="biq-transcript"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <article id="next" class="row" aria-labelledby="ch-next">
+          <div class="row-label">
+            <p class="year" aria-hidden="true">Next</p>
+            <p class="label">In design</p>
+          </div>
+          <div class="row-content">
+            <h3 id="ch-next" class="item-title">A marketplace for referrals</h3>
+            <div class="prose">
+              <p>
+                A two-sided marketplace connecting the educational consultants who refer families
+                with the programs that serve them. It's one of the projects below.
+              </p>
             </div>
-            <figcaption class="demo-foot">
-              <span>The same interface as the production feature, with an invented note.</span>
-              <button type="button" id="biq-replay" class="demo-replay" hidden>Replay</button>
-            </figcaption>
-          </figure>
-        <div class="feature-grid">
-          <div><h4>Record with BlueIQ</h4><p>Staff dictate in the browser, and the note comes back in the behavior, intervention and response structure insurers look for. The model is told never to add anything the staff member didn't say.</p></div>
-          <div><h4>An assistant that answers from the chart</h4><p>Ask about one resident or the whole program and get answers with citations back to the records. It runs as the person asking, so it only sees what they're allowed to see.</p></div>
-          <div><h4>The daily milieu summary</h4><p>Every morning at 5, leadership gets a plain-language recap of the previous day, built from the sources each program chooses.</p></div>
-          <div><h4>Utilization review drafts</h4><p>The narrative sections insurers require get drafted from the clinical record, so clinicians edit instead of starting from a blank page.</p></div>
-        </div>
-        <p class="feature-under">
-          Under the hood: per-program usage credits so AI cost is metered, and a move from our
-          own OpenAI integration to the platform's native AI once it shipped, with OpenAI kept
-          as a fallback.
-        </p>
-      </article>
-
-      <article class="split" aria-labelledby="p-market">
-        <div class="split-visual">
-          <figure class="market" aria-label="Diagram: a consultant CRM and a program CRM, with referrals flowing to programs, and availability and outcomes flowing back to consultants">
-            <svg viewBox="0 0 640 220" role="img" aria-hidden="true">
-              <defs>
-                <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                  <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
-                </marker>
-              </defs>
-              <rect x="1" y="40" width="190" height="140" rx="10" class="node"/>
-              <text x="96" y="104" class="node-title" text-anchor="middle">Consultant</text>
-              <text x="96" y="128" class="node-sub" text-anchor="middle">CRM</text>
-              <rect x="449" y="40" width="190" height="140" rx="10" class="node"/>
-              <text x="544" y="104" class="node-title" text-anchor="middle">Program</text>
-              <text x="544" y="128" class="node-sub" text-anchor="middle">CRM</text>
-              <line x1="200" y1="78" x2="440" y2="78" class="flow" marker-end="url(#arrow)"/>
-              <text x="320" y="66" class="flow-label" text-anchor="middle">Referrals</text>
-              <line x1="440" y1="122" x2="200" y2="122" class="flow" marker-end="url(#arrow)"/>
-              <text x="320" y="112" class="flow-label" text-anchor="middle">Openings</text>
-              <line x1="440" y1="162" x2="200" y2="162" class="flow" marker-end="url(#arrow)"/>
-              <text x="320" y="152" class="flow-label" text-anchor="middle">Outcomes</text>
-            </svg>
-          </figure>
-        </div>
-        <div class="split-text">
-          <p class="project-meta">In design</p>
-          <h3 id="p-market">The referral marketplace</h3>
-          <p>
-            Educational consultants place families with programs, and programs live on those
-            referrals. But each side tracks the relationship in its own CRM, and everything
-            between them happens over phone calls and email: who has a bed open, who fits this
-            kid, how the last placement turned out.
-          </p>
-          <p>
-            I'm designing the layer that connects them. The referral becomes a shared record
-            both sides can see and act on, and openings and outcomes flow back so consultants
-            can place families with real evidence.
-          </p>
-          <p>
-            The hard part is the same as in any two-sided product: each side needs its own view
-            of the same truth, and neither should see what isn't theirs.
-          </p>
-        </div>
-      </article>
-
-      <div class="tiles">
-        <article class="tile" aria-labelledby="p-modular">
-          <h3 id="p-modular">One product, many programs</h3>
-          <p class="project-meta">The platform rebuild and how it ships</p>
-          <p>
-            Each program turns features on or off and sets up its own roles; one change to a
-            role updates around fifty permissions for everyone who holds it. Changes are made
-            once and rolled out by script to every customer, with a test customer first and a
-            read-only check afterward that confirms each one landed.
-          </p>
-        </article>
-
-        <article class="tile" aria-labelledby="p-esign">
-          <h3 id="p-esign">Agreements</h3>
-          <p class="project-meta">E-signatures, built into the platform</p>
-          <p>
-            Programs were paying for a separate e-signature service, then copying signed
-            documents into the chart by hand. Now there's a template studio, signing inside the
-            record or from a link sent to parents, and a background job that files every
-            completed agreement. It went out to eight customers at once with nothing failing
-            silently.
-          </p>
-        </article>
-
-        <article class="tile" aria-labelledby="p-apps">
-          <h3 id="p-apps">The application builder</h3>
-          <p class="project-meta">Admissions forms programs design themselves</p>
-          <p>
-            Every change to an admissions application used to mean an engineer, and then someone
-            retyped the answers. Programs now build applications with drag and drop and
-            conditional questions; families submit on a public site that rejects duplicates,
-            and every answer maps into the chart automatically.
-          </p>
-        </article>
-
-        <article class="tile tile-stat" aria-labelledby="p-incident">
-          <h3 id="p-incident">Incident compliance dashboard</h3>
-          <p class="project-meta">Seeing patterns across a whole program</p>
-          <p>
-            Trends against the previous period, team scorecards, categories, and a heatmap of
-            day of week against hour, with a table view behind every chart. While building it I
-            found duplicate records that had been inflating every number by about 12%. A
-            dashboard is only as honest as its data.
-          </p>
+          </div>
         </article>
       </div>
     </section>
 
-    <section class="throughline" aria-labelledby="throughline-title">
-      <h2 id="throughline-title">I've been the user, the operator, the builder and the executive.</h2>
-      <p>
-        So I hear a problem the way the person living it does, I can see the software that
-        fixes it, and I know what it takes to build it and run the business around it.
-      </p>
+    <!-- Projects: the same row, with the category in the label column. -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="wrap">
+        <h2 id="projects-title" class="section-title">Notable projects</h2>
+
+        <div class="row" aria-labelledby="primer-title">
+          <div class="row-label">
+            <p class="label label-strong">Context</p>
+          </div>
+          <div class="row-content">
+            <h3 id="primer-title" class="item-title">First, what BlueStep is</h3>
+            <p class="lede">
+              BlueStep runs the programs where teenagers and young adults live for months while
+              they get treatment. Each one is a hospital, a school, a dorm and a business at once.
+            </p>
+            <div class="prose">
+              <p>
+                BlueStep is the system all of it runs on: the clinical chart, admissions, the school,
+                billing, staffing and the portal parents log into. Every program is different, so
+                every part of it has to be configurable. A few terms you'll see below:
+              </p>
+            </div>
+            <dl class="pairs terms">
+              <div><dt>Program</dt><dd>A residential treatment center or therapeutic school. Our customers.</dd></div>
+              <div><dt>Direct-care staff</dt><dd>The people on shift with residents day and night. Rarely at a desk.</dd></div>
+              <div><dt>Shift note</dt><dd>What staff write about each resident every shift. It becomes part of the medical record.</dd></div>
+              <div><dt>Milieu</dt><dd>The daily living environment: meals, school, groups, free time.</dd></div>
+              <div><dt>Educational consultant</dt><dd>An advisor families hire to find the right program. The industry's biggest source of referrals.</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <article class="row" aria-labelledby="p-blueiq">
+          <div class="row-label">
+            <p class="label label-strong">AI</p>
+            <p class="label">BlueStep's AI product line. I designed and built every feature.</p>
+          </div>
+          <div class="row-content">
+            <h3 id="p-blueiq" class="item-title">BlueIQ</h3>
+            <p class="lede">
+              Direct-care staff spend their shifts on their feet with residents, then sit down and
+              type notes that become a medical record. Clinicians then read hundreds of those notes
+              to figure out what happened. BlueIQ puts AI where that time goes.
+            </p>
+            <figure class="demo" aria-label="Interactive demo of Record with BlueIQ">
+              <p class="demo-intro">Try it. Press Record with BlueIQ, then Record. No microphone needed; the recording is simulated.</p>
+              <div id="biq-demo" class="demo-frame">
+                <div class="bs-bar">
+                  <span class="bs-bar-title">Shift Notes</span>
+                  <span class="bs-bar-meta">Demo Student, Evening shift</span>
+                </div>
+                <div class="bs-form">
+                  <div class="bs-card">
+                    <div class="bs-row">
+                      <div class="bs-label">BlueIQ</div>
+                      <div class="bs-value">
+                        <div class="biq-root">
+                          <button type="button" class="biq-launch"><span class="biq-launch-spark"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/></svg></span><span class="biq-launch-label">Record with <span class="biq-brand">BlueIQ</span></span></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bs-row">
+                      <div class="bs-label">Summary</div>
+                      <div class="bs-value"><div class="bs-field" data-field="summary" data-placeholder="What happened this shift"></div></div>
+                    </div>
+                    <div class="bs-row">
+                      <div class="bs-label">Strengths</div>
+                      <div class="bs-value"><div class="bs-field" data-field="strengths" data-placeholder="What went well"></div></div>
+                    </div>
+                    <div class="bs-row">
+                      <div class="bs-label">Concerns</div>
+                      <div class="bs-value"><div class="bs-field" data-field="concerns" data-placeholder="Anything the team should know"></div></div>
+                    </div>
+                  </div>
+                  <div class="bs-actions"><button type="button" class="bs-save" disabled>Save</button></div>
+                </div>
+
+                <div class="biq-overlay" hidden>
+                  <div class="biq-panel" role="dialog" aria-modal="true" aria-label="BlueIQ Shift Note">
+                    <div class="biq-panel-head">
+                      <div class="biq-panel-title"><span class="biq-live-dot"></span><span><span class="biq-brand">BlueIQ</span> Shift Note</span></div>
+                      <button type="button" class="biq-collapse" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="biq-panel-body">
+                      <p class="biq-hint">Speak your shift notes for this student. When you stop, BlueIQ fills the <strong>Summary</strong>, <strong>Strengths</strong>, and <strong>Concerns</strong> boxes from what you said. Review and edit before saving.</p>
+                      <div class="biq-controls">
+                        <button type="button" id="biq-record" class="biq-btn"><span class="biq-dot"></span><span class="biq-btn-label">Record</span></button>
+                        <button type="button" id="biq-rerecord" class="biq-btn is-secondary" hidden><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 4v6h6"/><path d="M3.5 9a9 9 0 1 1-.5 5"/></svg><span>Re-record</span></button>
+                        <span class="biq-timer">00:00</span>
+                        <div class="biq-viz" aria-hidden="true"></div>
+                        <span class="biq-status" role="status">Idle</span>
+                      </div>
+                      <div class="biq-transcript-wrap" hidden>
+                        <div class="biq-label">What BlueIQ heard (not shown on the saved note)</div>
+                        <div class="biq-transcript"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <figcaption class="demo-foot">
+                <span>The same interface as the production feature, with an invented note.</span>
+                <button type="button" id="biq-replay" class="demo-replay" hidden>Replay</button>
+              </figcaption>
+            </figure>
+            <dl class="pairs">
+              <div><dt>Record with BlueIQ</dt><dd>Staff dictate in the browser, and the note comes back in the behavior, intervention and response structure insurers look for. The model is told never to add anything the staff member didn't say.</dd></div>
+              <div><dt>An assistant that answers from the chart</dt><dd>Ask about one resident or the whole program and get answers with citations back to the records. It runs as the person asking, so it only sees what they're allowed to see.</dd></div>
+              <div><dt>The daily milieu summary</dt><dd>Every morning at 5, leadership gets a plain-language recap of the previous day, built from the sources each program chooses.</dd></div>
+              <div><dt>Utilization review drafts</dt><dd>The narrative sections insurers require get drafted from the clinical record, so clinicians edit instead of starting from a blank page.</dd></div>
+            </dl>
+            <p class="note">
+              Under the hood: per-program usage credits so AI cost is metered, and a move from our
+              own OpenAI integration to the platform's native AI once it shipped, with OpenAI kept as
+              a fallback.
+            </p>
+          </div>
+        </article>
+
+        <article class="row" aria-labelledby="p-market">
+          <div class="row-label">
+            <p class="label label-strong">Marketplace</p>
+            <p class="label">In design</p>
+          </div>
+          <div class="row-content">
+            <h3 id="p-market" class="item-title">The referral marketplace</h3>
+            <p class="lede">
+              Educational consultants place families with programs, and programs live on those
+              referrals. But everything between the two happens over phone calls and email.
+            </p>
+            <figure class="market" aria-label="Diagram: a consultant CRM and a program CRM, with referrals flowing to programs, and availability and outcomes flowing back to consultants">
+              <svg viewBox="0 0 640 220" role="img" aria-hidden="true">
+                <defs>
+                  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+                  </marker>
+                </defs>
+                <rect x="1" y="40" width="190" height="140" rx="10" class="node"/>
+                <text x="96" y="104" class="node-title" text-anchor="middle">Consultant</text>
+                <text x="96" y="128" class="node-sub" text-anchor="middle">CRM</text>
+                <rect x="449" y="40" width="190" height="140" rx="10" class="node"/>
+                <text x="544" y="104" class="node-title" text-anchor="middle">Program</text>
+                <text x="544" y="128" class="node-sub" text-anchor="middle">CRM</text>
+                <line x1="200" y1="78" x2="440" y2="78" class="flow" marker-end="url(#arrow)"/>
+                <text x="320" y="66" class="flow-label" text-anchor="middle">Referrals</text>
+                <line x1="440" y1="122" x2="200" y2="122" class="flow" marker-end="url(#arrow)"/>
+                <text x="320" y="112" class="flow-label" text-anchor="middle">Openings</text>
+                <line x1="440" y1="162" x2="200" y2="162" class="flow" marker-end="url(#arrow)"/>
+                <text x="320" y="152" class="flow-label" text-anchor="middle">Outcomes</text>
+              </svg>
+            </figure>
+            <div class="prose">
+              <p>
+                Each side tracks the relationship in its own CRM: who has a bed open, who fits this
+                kid, how the last placement turned out. I'm designing the layer that connects them.
+                The referral becomes a shared record both sides can see and act on, and openings and
+                outcomes flow back so consultants can place families with real evidence.
+              </p>
+              <p>
+                The hard part is the same as in any two-sided product: each side needs its own view
+                of the same truth, and neither should see what isn't theirs.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <div class="row" aria-labelledby="more-title">
+          <div class="row-label">
+            <p class="label label-strong">Platform</p>
+          </div>
+          <div class="row-content">
+            <h3 id="more-title" class="item-title">More from the rebuild</h3>
+            <div class="grid">
+              <article aria-labelledby="p-modular">
+                <h4 id="p-modular">One product, many programs</h4>
+                <p>
+                  Each program turns features on or off and sets up its own roles; one change to a
+                  role updates around fifty permissions for everyone who holds it. Changes are made
+                  once and rolled out by script to every customer, with a test customer first and a
+                  read-only check afterward that confirms each one landed.
+                </p>
+              </article>
+              <article aria-labelledby="p-esign">
+                <h4 id="p-esign">Agreements</h4>
+                <p>
+                  Programs were paying for a separate e-signature service, then copying signed
+                  documents into the chart by hand. Now there's a template studio, signing inside
+                  the record or from a link sent to parents, and a background job that files every
+                  completed agreement. It went out to eight customers at once with nothing failing
+                  silently.
+                </p>
+              </article>
+              <article aria-labelledby="p-apps">
+                <h4 id="p-apps">The application builder</h4>
+                <p>
+                  Every change to an admissions application used to mean an engineer, and then
+                  someone retyped the answers. Programs now build applications with drag and drop
+                  and conditional questions; families submit on a public site that rejects
+                  duplicates, and every answer maps into the chart automatically.
+                </p>
+              </article>
+              <article aria-labelledby="p-incident">
+                <h4 id="p-incident">Incident compliance dashboard</h4>
+                <p>
+                  Trends against the previous period, team scorecards, categories, and a heatmap of
+                  day of week against hour, with a table view behind every chart. While building it
+                  I found duplicate records that had been inflating every number by about 12%. A
+                  dashboard is only as honest as its data.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section closing" aria-labelledby="throughline-title">
+      <div class="wrap">
+        <h2 id="throughline-title" class="section-title">I've been the user, the operator, the builder and the executive.</h2>
+        <div class="row row-flush">
+          <div class="row-label"></div>
+          <div class="row-content">
+            <p class="lede">
+              So I hear a problem the way the person living it does, I can see the software that
+              fixes it, and I know what it takes to build it and run the business around it.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer id="contact" class="site-footer">
-    <h2>Let's talk.</h2>
-    <p class="contact-links">
-      <a href="mailto:paynebrandon4@gmail.com">paynebrandon4@gmail.com</a>
-      <a href="https://www.linkedin.com/in/payne-brandon">LinkedIn</a>
-    </p>
-    <p class="fineprint">Brandon Payne, MBA. Utah.</p>
+    <div class="wrap row row-flush">
+      <div class="row-label">
+        <p class="label label-strong">Contact</p>
+      </div>
+      <div class="row-content">
+        <h2 class="item-title">Let's talk.</h2>
+        <p class="contact-links">
+          <a href="mailto:paynebrandon4@gmail.com">paynebrandon4@gmail.com</a>
+          <a href="https://www.linkedin.com/in/payne-brandon">LinkedIn</a>
+        </p>
+        <p class="fineprint">Brandon Payne, MBA. Utah.</p>
+      </div>
+    </div>
   </footer>
-  <script src="demo.js?v=202610040937"></script>
+
+  <script src="demo.js?v=202610040944"></script>
 </body>
 </html>
