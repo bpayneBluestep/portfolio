@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="demo.css">
 </head>
 <body>
   <a class="skip" href="#story">Skip to the story</a>
@@ -207,20 +208,66 @@
             gets the picture without reading everything.
           </p>
 
-          <figure class="transform">
-            <div class="transform-said">
-              <p class="transform-label">What staff say</p>
-              <blockquote>"Rough night for him after the phone call home. Shut down at dinner, wouldn't eat. I sat with him a while, we did some breathing, and he ended up playing cards with the group before bed."</blockquote>
+          <figure class="demo" aria-label="Interactive demo of Record with BlueIQ">
+            <p class="demo-intro">Try it. Press Record with BlueIQ, then Record. No microphone needed; the recording is simulated.</p>
+            <div id="biq-demo" class="demo-frame">
+              <div class="bs-bar">
+                <span class="bs-bar-title">Shift Notes</span>
+                <span class="bs-bar-meta">Demo Student, Evening shift</span>
+              </div>
+              <div class="bs-form">
+                <div class="bs-card">
+                  <div class="bs-row">
+                    <div class="bs-label">BlueIQ</div>
+                    <div class="bs-value">
+                      <div class="biq-root">
+                        <button type="button" class="biq-launch"><span class="biq-launch-spark"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/></svg></span><span class="biq-launch-label">Record with <span class="biq-brand">BlueIQ</span></span></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bs-row">
+                    <div class="bs-label">Summary</div>
+                    <div class="bs-value"><div class="bs-field" data-field="summary" data-placeholder="What happened this shift"></div></div>
+                  </div>
+                  <div class="bs-row">
+                    <div class="bs-label">Strengths</div>
+                    <div class="bs-value"><div class="bs-field" data-field="strengths" data-placeholder="What went well"></div></div>
+                  </div>
+                  <div class="bs-row">
+                    <div class="bs-label">Concerns</div>
+                    <div class="bs-value"><div class="bs-field" data-field="concerns" data-placeholder="Anything the team should know"></div></div>
+                  </div>
+                </div>
+                <div class="bs-actions"><button type="button" class="bs-save" disabled>Save</button></div>
+              </div>
+
+              <div class="biq-overlay" hidden>
+                <div class="biq-panel" role="dialog" aria-modal="true" aria-label="BlueIQ Shift Note">
+                  <div class="biq-panel-head">
+                    <div class="biq-panel-title"><span class="biq-live-dot"></span><span><span class="biq-brand">BlueIQ</span> Shift Note</span></div>
+                    <button type="button" class="biq-collapse" aria-label="Close">&times;</button>
+                  </div>
+                  <div class="biq-panel-body">
+                    <p class="biq-hint">Speak your shift notes for this student. When you stop, BlueIQ fills the <strong>Summary</strong>, <strong>Strengths</strong>, and <strong>Concerns</strong> boxes from what you said. Review and edit before saving.</p>
+                    <div class="biq-controls">
+                      <button type="button" id="biq-record" class="biq-btn"><span class="biq-dot"></span><span class="biq-btn-label">Record</span></button>
+                      <button type="button" id="biq-rerecord" class="biq-btn is-secondary" hidden><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 4v6h6"/><path d="M3.5 9a9 9 0 1 1-.5 5"/></svg><span>Re-record</span></button>
+                      <span class="biq-timer">00:00</span>
+                      <div class="biq-viz" aria-hidden="true"></div>
+                      <span class="biq-status" role="status">Idle</span>
+                    </div>
+                    <div class="biq-transcript-wrap" hidden>
+                      <div class="biq-label">What BlueIQ heard (not shown on the saved note)</div>
+                      <div class="biq-transcript"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="transform-wrote">
-              <p class="transform-label">What BlueIQ writes</p>
-              <dl>
-                <div><dt>Behavior</dt><dd>Resident became withdrawn following a phone call home and declined dinner.</dd></div>
-                <div><dt>Intervention</dt><dd>Staff provided one-on-one support and guided breathing exercises.</dd></div>
-                <div><dt>Response</dt><dd>Resident re-engaged and joined a group activity before bedtime.</dd></div>
-              </dl>
-            </div>
-            <figcaption>An invented example. Staff review every note before it saves.</figcaption>
+            <figcaption class="demo-foot">
+              <span>The same interface as the production feature, with an invented note.</span>
+              <button type="button" id="biq-replay" class="demo-replay" hidden>Replay</button>
+            </figcaption>
           </figure>
 
           <ul class="project-points">
@@ -390,5 +437,6 @@
     </p>
     <p class="fineprint">Brandon Payne, MBA. Utah.</p>
   </footer>
+  <script src="demo.js"></script>
 </body>
 </html>

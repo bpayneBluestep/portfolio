@@ -1,0 +1,217 @@
+/* Record with BlueIQ demo.
+   The .biq-* rules mirror the production component's styles in BlueStep;
+   the .bs-* rules stand in for the BlueStep Shift Notes form around it. */
+
+.demo { margin: 36px 0 40px; }
+.demo-intro { margin: 0 0 12px; font-family: var(--sans); font-size: 0.95rem; color: var(--muted); }
+
+.demo-frame {
+  position: relative;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #eef1f4;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #222;
+  -webkit-font-smoothing: auto;
+}
+
+.demo-foot {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  margin-top: 10px;
+  font-family: var(--sans); font-size: 0.85rem; color: var(--muted);
+}
+.demo-replay {
+  font: inherit; color: var(--blue); background: none; border: none; padding: 0; cursor: pointer;
+  text-decoration: underline; text-underline-offset: 0.18em;
+}
+.demo-replay[hidden] { display: none; }
+
+/* ---- Stand-in BlueStep form ---- */
+.bs-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 9px 14px;
+  background: #2d3e50; color: #fff;
+  font-size: 13px;
+}
+.bs-bar-title { font-weight: 700; }
+.bs-bar-meta { opacity: 0.75; }
+
+.bs-form { padding: 14px; }
+.bs-card { background: #fff; border: 1px solid #d6dbe1; border-radius: 4px; }
+.bs-row { display: grid; grid-template-columns: 120px minmax(0, 1fr); border-bottom: 1px solid #e7eaee; }
+.bs-row:last-child { border-bottom: none; }
+.bs-label { padding: 10px 12px; background: #f6f7f9; color: #555; font-weight: 700; font-size: 12px; }
+.bs-value { padding: 8px 12px; min-width: 0; }
+.bs-static { padding-top: 2px; display: inline-block; }
+
+.bs-field {
+  width: 100%;
+  min-height: 58px;
+  padding: 7px 9px;
+  border: 1px solid #c9d0d8;
+  border-radius: 3px;
+  background: #fff;
+  font: inherit;
+  color: #222;
+  white-space: pre-wrap;
+  transition: background-color 0.6s ease, border-color 0.6s ease;
+}
+.bs-field:empty::before { content: attr(data-placeholder); color: #a5adb6; }
+.bs-field.is-filled { background: #f1f9ff; border-color: #8fccff; }
+
+.bs-actions { display: flex; justify-content: flex-end; gap: 8px; padding-top: 12px; }
+.bs-save {
+  font: inherit; font-weight: 700; color: #fff; background: #3a7bd5;
+  border: none; border-radius: 3px; padding: 7px 16px; opacity: 0.6; cursor: default;
+}
+
+/* ---- BlueIQ component (mirrors production) ---- */
+.biq-root, .biq-root * { box-sizing: border-box; }
+.biq-root { margin: 0; }
+
+@keyframes biq-shimmer { to { background-position: 300% center; } }
+.biq-brand {
+  font-style: italic;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00a6ff, #6a5cff, #9a6eff, #00a6ff);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: biq-shimmer 5s linear infinite;
+  display: inline-block;
+}
+
+.biq-launch {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid #bfe0ff; background: #f1f9ff; color: #0b6aa2;
+  border-radius: 8px;
+  padding: 8px 17px 8px 14px;
+  font: inherit; font-size: 13px; font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+.biq-launch:hover { background: #e4f3ff; border-color: #8fccff; }
+.biq-launch-spark { display: inline-flex; color: #00a6ff; }
+.biq-launch .biq-brand { font-size: 14px; }
+.biq-launch.is-nudge { box-shadow: 0 0 0 0 rgba(0, 166, 255, 0.5); animation: biq-nudge 1.8s ease-out 3; }
+@keyframes biq-nudge { 0% { box-shadow: 0 0 0 0 rgba(0, 166, 255, 0.45); } 100% { box-shadow: 0 0 0 10px rgba(0, 166, 255, 0); } }
+
+/* Overlay is scoped to the demo frame instead of the whole page */
+.biq-overlay {
+  position: absolute; inset: 0; z-index: 5;
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px;
+  background: rgba(10, 16, 32, 0.55);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  animation: biq-overlay-in 0.15s ease-out;
+}
+.biq-overlay[hidden] { display: none; }
+@keyframes biq-overlay-in { from { opacity: 0; } to { opacity: 1; } }
+
+.biq-panel {
+  width: 560px; max-width: 100%; max-height: 100%;
+  display: flex; flex-direction: column;
+  border-radius: 14px; background: #fff; overflow: hidden;
+  box-shadow: 0 24px 60px rgba(8, 14, 30, 0.45);
+  animation: biq-panel-in 0.18s cubic-bezier(0.2, 0.9, 0.3, 1.15);
+}
+@keyframes biq-panel-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.biq-panel-head {
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #131a3c 0%, #241a52 100%);
+  color: #fff;
+}
+.biq-panel-title { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 15px; }
+.biq-panel-title .biq-brand { font-size: 16px; }
+.biq-live-dot { width: 8px; height: 8px; border-radius: 50%; background: #8be0a0; }
+.biq-collapse {
+  background: rgba(255, 255, 255, 0.14); border: none; color: #fff;
+  width: 26px; height: 26px; line-height: 1;
+  border-radius: 50%; cursor: pointer; font-size: 18px;
+}
+.biq-collapse:hover { background: rgba(255, 255, 255, 0.28); }
+
+.biq-panel-body { padding: 16px; overflow-y: auto; }
+.biq-hint { margin: 0 0 12px 0; font-size: 12px; color: #5a6470; line-height: 1.5; }
+
+.biq-controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.biq-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #00a6ff; color: #fff;
+  border: none; border-radius: 8px;
+  padding: 9px 18px; font: inherit; font-size: 14px; font-weight: 600;
+  cursor: pointer; transition: background 0.15s, transform 0.05s;
+}
+.biq-btn:hover:not(:disabled) { background: #33b8ff; }
+.biq-btn:active:not(:disabled) { transform: translateY(1px); }
+.biq-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.biq-btn.is-recording { background: #c0392b; }
+.biq-btn.is-recording:hover:not(:disabled) { background: #d0442f; }
+.biq-dot { width: 11px; height: 11px; border-radius: 50%; background: #fff; flex-shrink: 0; }
+.biq-btn.is-recording .biq-dot { animation: biq-pulse 1s ease-in-out infinite; }
+@keyframes biq-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+
+.biq-timer { font-variant-numeric: tabular-nums; font-size: 15px; color: #555; min-width: 50px; }
+.biq-status { font-size: 12px; color: #888; flex: 1; min-width: 140px; }
+.biq-status.biq-dots { color: #5a4baf; font-weight: 600; }
+.biq-status.biq-dots::after {
+  content: "."; display: inline-block; min-width: 1.3em; text-align: left;
+  animation: biq-thinking-dots 1.2s infinite;
+}
+@keyframes biq-thinking-dots {
+  0%, 32%  { content: "."; }
+  33%, 65% { content: ".."; }
+  66%, 99% { content: "..."; }
+}
+.biq-status.is-rec { color: #c0392b; font-weight: 600; }
+.biq-status.is-ok { color: #2e7d32; font-weight: 600; }
+
+.biq-viz { display: none; align-items: center; gap: 2px; height: 26px; flex: 1; min-width: 90px; }
+.biq-overlay.is-recording .biq-viz { display: flex; }
+.biq-overlay.is-recording .biq-status { display: none; }
+.biq-viz-bar {
+  width: 3px; height: 3px; flex: 0 0 auto; border-radius: 2px;
+  background: linear-gradient(180deg, #00a6ff 0%, #6a5cff 100%);
+  transition: height 0.06s linear;
+}
+
+.biq-transcript-wrap { margin-top: 14px; }
+.biq-transcript-wrap[hidden] { display: none; }
+.biq-label {
+  font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.6px; color: #9aa3ad; margin-bottom: 5px;
+}
+.biq-transcript {
+  border: 1px dashed #d8e2ec; border-radius: 8px;
+  background: #f8fafc; padding: 12px 14px;
+  max-height: 180px; overflow-y: auto;
+  font-size: 13px; line-height: 1.55; color: #4a5560;
+  white-space: pre-wrap; word-break: break-word;
+}
+
+@media (max-width: 560px) {
+  .bs-row { grid-template-columns: minmax(0, 1fr); }
+  .bs-label { padding: 8px 12px 4px; background: none; }
+  .bs-value { padding-top: 0; }
+  .bs-bar-meta { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .biq-brand, .biq-launch.is-nudge, .biq-btn.is-recording .biq-dot { animation: none; }
+  .biq-overlay, .biq-panel { animation: none; }
+}
+.biq-btn[hidden] { display: none; }
+.biq-btn.is-secondary { background: #fff; color: #0b6aa2; border: 1px solid #bfe0ff; }
+.biq-btn.is-secondary:hover:not(:disabled) { background: #f1f9ff; border-color: #8fccff; }
+.biq-btn svg { display: block; }
