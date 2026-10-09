@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=202610091830">
-  <link rel="stylesheet" href="demo.css?v=202610091830">
+  <link rel="stylesheet" href="styles.css?v=202610091836">
+  <link rel="stylesheet" href="demo.css?v=202610091836">
 </head>
 <body>
   <a class="skip" href="#story">Skip to the story</a>
@@ -34,7 +34,7 @@
         <span class="title now" style="--i:3">Executive Director</span>
       </h1>
       <p class="hero-lede">
-        I started as a BlueStep user at a treatment program in southern Utah.
+        I started as a <button type="button" class="term" aria-haspopup="dialog" data-dialog="dlg-bluestep">BlueStep</button> user at a treatment program in southern Utah.
         Today I help run the company. This is how that happened.
       </p>
     </section>
@@ -53,7 +53,7 @@
             <h3 id="ch-2019" class="item-title">The user</h3>
             <div class="prose">
               <p>
-                I spent three years at Havenwood Academy, a residential treatment program in
+                I spent three years at <button type="button" class="term" aria-haspopup="dialog" data-dialog="dlg-havenwood">Havenwood Academy</button>, a residential treatment program in
                 Cedar City, Utah, and finished as Director of Growth on the leadership team after
                 my MBA. Everything there ran on BlueStep: clinical notes, admissions, the census,
                 the reports leadership read every Monday morning.
@@ -158,37 +158,10 @@
       <div class="wrap">
         <h2 id="projects-title" class="section-title">Notable projects</h2>
 
-        <div class="row" aria-labelledby="primer-title">
-          <div class="row-label">
-            <p class="label label-strong">Context</p>
-          </div>
-          <div class="row-content">
-            <h3 id="primer-title" class="item-title">First, what BlueStep is</h3>
-            <p class="lede">
-              BlueStep runs the programs where teenagers and young adults live for months while
-              they get treatment. Each one is a hospital, a school, a dorm and a business at once.
-            </p>
-            <div class="prose">
-              <p>
-                BlueStep is the system all of it runs on: the clinical chart, admissions, the school,
-                billing, staffing and the portal parents log into. Every program is different, so
-                every part of it has to be configurable. A few terms you'll see below:
-              </p>
-            </div>
-            <dl class="pairs terms">
-              <div><dt>Program</dt><dd>A residential treatment center or therapeutic school. Our customers.</dd></div>
-              <div><dt>Direct-care staff</dt><dd>The people on shift with residents day and night. Rarely at a desk.</dd></div>
-              <div><dt>Shift note</dt><dd>What staff write about each resident every shift. It becomes part of the medical record.</dd></div>
-              <div><dt>Milieu</dt><dd>The daily living environment: meals, school, groups, free time.</dd></div>
-              <div><dt>Educational consultant</dt><dd>An advisor families hire to find the right program. The industry's biggest source of referrals.</dd></div>
-            </dl>
-          </div>
-        </div>
-
         <article class="row" aria-labelledby="p-blueiq">
           <div class="row-label">
             <p class="label label-strong">AI</p>
-            <p class="label">BlueStep's AI product line. I designed and built every feature.</p>
+            <p class="label"><button type="button" class="term" aria-haspopup="dialog" data-dialog="dlg-bluestep">BlueStep</button>'s AI product line. I designed and built every feature.</p>
           </div>
           <div class="row-content">
             <h3 id="p-blueiq" class="item-title">BlueIQ</h3>
@@ -439,6 +412,65 @@
     </div>
   </footer>
 
-  <script src="demo.js?v=202610091830"></script>
+  <dialog id="dlg-bluestep" class="popup" aria-labelledby="dlg-bluestep-title">
+    <div class="popup-head">
+      <h2 id="dlg-bluestep-title" class="popup-title">What BlueStep is</h2>
+      <button type="button" class="popup-close" aria-label="Close">&times;</button>
+    </div>
+    <p class="lede">
+      BlueStep runs the programs where teenagers and young adults live for months while they get
+      treatment. Each one is a hospital, a school, a dorm and a business at once.
+    </p>
+    <div class="prose">
+      <p>
+        BlueStep is the system all of it runs on: the clinical chart, admissions, the school,
+        billing, staffing and the portal parents log into. Every program is different, so every
+        part of it has to be configurable.
+      </p>
+    </div>
+    <h3 class="popup-sub">A few terms you'll see on this site</h3>
+    <dl class="pairs terms">
+      <div><dt>Program</dt><dd>A residential treatment center or therapeutic school. Our customers.</dd></div>
+      <div><dt>Direct-care staff</dt><dd>The people on shift with residents day and night. Rarely at a desk.</dd></div>
+      <div><dt>Shift note</dt><dd>What staff write about each resident every shift. It becomes part of the medical record.</dd></div>
+      <div><dt>Milieu</dt><dd>The daily living environment: meals, school, groups, free time.</dd></div>
+      <div><dt>Educational consultant</dt><dd>An advisor families hire to find the right program. The industry's biggest source of referrals.</dd></div>
+    </dl>
+  </dialog>
+
+  <dialog id="dlg-havenwood" class="popup" aria-labelledby="dlg-havenwood-title">
+    <div class="popup-head">
+      <h2 id="dlg-havenwood-title" class="popup-title">What Havenwood Academy is</h2>
+      <button type="button" class="popup-close" aria-label="Close">&times;</button>
+    </div>
+    <p class="lede">
+      A long-term residential treatment center in Cedar City, Utah, for young women ages 12 to 18.
+      Students live on campus, go to school on campus and do the work of getting well there.
+    </p>
+    <div class="prose">
+      <p>
+        Havenwood specializes in complex trauma and attachment, and many of its students come from
+        adoptive families. Treatment pairs therapy, including EMDR, neurofeedback and brainspotting,
+        with an accredited school and the everyday life skills that help it hold up after discharge.
+      </p>
+      <p>
+        It's licensed by the state of Utah, accredited by the Joint Commission and staffed at more
+        than four adults for every student. A sister program for boys, Havenwood SLC, has since
+        opened in Salt Lake City.
+      </p>
+    </div>
+    <h3 class="popup-sub">Why it matters to this story</h3>
+    <div class="prose">
+      <p>
+        A program like Havenwood runs around the clock, and nearly everything it does has to be
+        documented: every shift, every medication, every therapy session, every class. That's a lot
+        of software in the hands of people who would rather be with the kids. It's where I learned
+        what software owes the people who use it.
+      </p>
+    </div>
+  </dialog>
+
+  <script src="popups.js?v=202610091836"></script>
+  <script src="demo.js?v=202610091836"></script>
 </body>
 </html>

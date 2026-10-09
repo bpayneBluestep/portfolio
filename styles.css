@@ -197,6 +197,42 @@ a:hover { text-decoration-thickness: 2px; }
 .g-trout { grid-area: trout; object-position: 50% 45%; }
 .g-tati { grid-area: tati; object-position: 50% 35%; }
 
+/* Inline terms that open an explainer popup */
+.term {
+  font: inherit; color: inherit; background: none; border: none; padding: 0; margin: 0;
+  cursor: pointer;
+  text-decoration: underline dotted var(--blue);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+.term:hover { color: var(--blue); text-decoration-style: solid; }
+.label .term { color: var(--muted); }
+.label .term:hover { color: var(--blue); }
+
+.popup {
+  width: min(44rem, calc(100vw - 32px));
+  max-height: calc(100vh - 48px);
+  padding: 40px clamp(20px, 4vw, 48px) 48px;
+  border: none; border-radius: 10px;
+  background: var(--paper); color: var(--ink);
+  box-shadow: 0 24px 64px rgba(15, 29, 69, 0.28);
+}
+.popup::backdrop { background: rgba(15, 29, 69, 0.55); }
+.popup-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+.popup-title { margin: 0; font-size: var(--t-item); font-weight: 500; line-height: 1.12; letter-spacing: -0.015em; }
+.popup-close {
+  flex-shrink: 0; width: 36px; height: 36px; margin: -4px -8px 0 0;
+  border: none; border-radius: 50%; background: none; color: var(--muted);
+  font-size: 1.75rem; line-height: 1; cursor: pointer;
+}
+.popup-close:hover { background: var(--rule); color: var(--ink); }
+.popup-sub { margin: var(--space-block) 0 0; font-family: var(--sans); font-size: 1rem; font-weight: 600; }
+.popup-sub + .prose { margin-top: 12px; }
+.popup .pairs { margin-top: 8px; }
+@media (prefers-reduced-motion: no-preference) {
+  .popup[open] { animation: arrive 0.25s ease-out; }
+}
+
 /* 2025: the only full-bleed band. Same row inside, so alignment holds. */
 .turn { background: var(--night); color: var(--night-ink); }
 .turn .row { border-top: none; padding-top: var(--space-section); padding-bottom: var(--space-section); }
