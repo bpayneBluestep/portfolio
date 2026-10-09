@@ -182,11 +182,11 @@ a:hover { text-decoration-thickness: 2px; }
 /* Personal photos: a fixed mosaic inside the content column */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-template-rows: repeat(2, clamp(150px, 15vw, 210px));
   grid-template-areas:
-    "kiko alps alps"
-    "kiko lake trout";
+    "kiko alps alps tati"
+    "kiko lake trout tati";
   gap: 12px;
   margin-top: 40px;
 }
@@ -195,6 +195,7 @@ a:hover { text-decoration-thickness: 2px; }
 .g-alps { grid-area: alps; object-position: 50% 40%; }
 .g-lake { grid-area: lake; object-position: 50% 40%; }
 .g-trout { grid-area: trout; object-position: 50% 45%; }
+.g-tati { grid-area: tati; object-position: 50% 35%; }
 
 /* 2025: the only full-bleed band. Same row inside, so alignment holds. */
 .turn { background: var(--night); color: var(--night-ink); }
@@ -240,8 +241,8 @@ a:hover { text-decoration-thickness: 2px; }
   .pairs, .grid { grid-template-columns: minmax(0, 1fr); }
   .gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: 260px 180px 180px;
-    grid-template-areas: "kiko trout" "alps alps" "lake lake";
+    grid-template-rows: 260px 180px 200px;
+    grid-template-areas: "kiko tati" "alps alps" "lake trout";
   }
 }
 @media (max-width: 560px) {
