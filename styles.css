@@ -172,6 +172,9 @@ a:hover { text-decoration-thickness: 2px; }
 .pairs dt { margin: 0 0 6px; font-family: var(--sans); font-weight: 600; font-size: 1rem; }
 .pairs dd { margin: 0; font-size: 1.05rem; line-height: 1.55; }
 .terms dd { color: var(--muted); }
+.pairs-flush { margin-top: 0; }
+.pairs-flush > div:first-child, .pairs-flush > div:nth-child(2) { border-top: none; padding-top: 0; }
+.prose-after { margin-top: var(--space-block); }
 
 /* Grid of smaller projects, two up */
 .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px var(--col-gap); margin-top: 8px; }
@@ -275,6 +278,7 @@ a:hover { text-decoration-thickness: 2px; }
   .year { margin: 0; font-size: 2.5rem; }
   .label + .label { margin-top: 0; }
   .pairs, .grid { grid-template-columns: minmax(0, 1fr); }
+  .pairs-flush > div:nth-child(2) { border-top: 1px solid var(--rule); padding-top: 20px; }
   .gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: 260px 180px 200px;
