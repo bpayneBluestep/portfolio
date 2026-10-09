@@ -173,12 +173,6 @@ a:hover { text-decoration-thickness: 2px; }
 .pairs dd { margin: 0; font-size: 1.05rem; line-height: 1.55; }
 .terms dd { color: var(--muted); }
 
-/* Plain list */
-.list-label { margin: var(--space-block) 0 8px; font-family: var(--sans); font-size: var(--t-small); color: var(--muted); }
-.list { margin: 0; padding: 0; list-style: none; max-width: var(--measure); }
-.list li { padding: 12px 0; border-top: 1px solid var(--rule); font-size: 1.05rem; line-height: 1.5; }
-.list li:last-child { border-bottom: 1px solid var(--rule); }
-
 /* Grid of smaller projects, two up */
 .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px var(--col-gap); margin-top: 8px; }
 .grid article { border-top: 1px solid var(--rule); padding-top: 20px; }
