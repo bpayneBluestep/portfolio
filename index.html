@@ -208,9 +208,12 @@
           <div class="row-content">
             <h3 id="p-blueiq" class="item-title">BlueIQ</h3>
             <p class="lede">
-              Direct-care staff spend their shifts on their feet with residents, then sit down and
-              type notes that become a medical record. Clinicians then read hundreds of those notes
-              to figure out what happened. BlueIQ puts AI where that time goes.
+              BlueIQ is the brand behind BlueStep's AI initiatives. Baked directly into the tools
+              that our users already have, we've built a series of features powered by HIPAA
+              compliant LLMs to make charting and delivering care easier. Below is our "Record with
+              BlueIQ" feature which is found throughout our product, giving the user the ability to
+              dictate their clinical notes and have an AI write out a strong, objective, and
+              insurance friendly note.
             </p>
             <figure class="demo" aria-label="Interactive demo of Record with BlueIQ">
               <p class="demo-intro">Try it. Press Record with BlueIQ, then Record. No microphone needed; the recording is simulated.</p>
@@ -274,16 +277,11 @@
               </figcaption>
             </figure>
             <dl class="pairs">
-              <div><dt>Record with BlueIQ</dt><dd>Staff dictate in the browser, and the note comes back in the behavior, intervention and response structure insurers look for. The model is told never to add anything the staff member didn't say.</dd></div>
-              <div><dt>An assistant that answers from the chart</dt><dd>Ask about one resident or the whole program and get answers with citations back to the records. It runs as the person asking, so it only sees what they're allowed to see.</dd></div>
-              <div><dt>The daily milieu summary</dt><dd>Every morning at 5, leadership gets a plain-language recap of the previous day, built from the sources each program chooses.</dd></div>
-              <div><dt>Utilization review drafts</dt><dd>The narrative sections insurers require get drafted from the clinical record, so clinicians edit instead of starting from a blank page.</dd></div>
+              <div><dt>Record with BlueIQ</dt><dd>Staff dictate in the browser, and the note comes back in the behavior, intervention and response structure insurers look for.</dd></div>
+              <div><dt>Patient Record Chatbot</dt><dd>Ask plain English questions about a patient and have your chatbot query through the patient's record, delivering answers and citing its sources along the way.</dd></div>
+              <div><dt>The daily milieu summary</dt><dd>Every morning leadership gets a plain-language recap of the previous day, helping them jumpstart on any problems they need to tackle.</dd></div>
+              <div><dt>Utilization review drafts</dt><dd>An AI powered narrative delivered to insurance companies, helping justify their levels of care. Sheds hours of time for clinicians from doing paperwork and fighting insurance companies.</dd></div>
             </dl>
-            <p class="note">
-              Under the hood: per-program usage credits so AI cost is metered, and a move from our
-              own OpenAI integration to the platform's native AI once it shipped, with OpenAI kept as
-              a fallback.
-            </p>
           </div>
         </article>
 
@@ -333,54 +331,6 @@
             </div>
           </div>
         </article>
-
-        <div class="row" aria-labelledby="more-title">
-          <div class="row-label">
-            <p class="label label-strong">Platform</p>
-          </div>
-          <div class="row-content">
-            <h3 id="more-title" class="item-title">More from the rebuild</h3>
-            <div class="grid">
-              <article aria-labelledby="p-modular">
-                <h4 id="p-modular">One product, many programs</h4>
-                <p>
-                  Each program turns features on or off and sets up its own roles; one change to a
-                  role updates around fifty permissions for everyone who holds it. Changes are made
-                  once and rolled out by script to every customer, with a test customer first and a
-                  read-only check afterward that confirms each one landed.
-                </p>
-              </article>
-              <article aria-labelledby="p-esign">
-                <h4 id="p-esign">Agreements</h4>
-                <p>
-                  Programs were paying for a separate e-signature service, then copying signed
-                  documents into the chart by hand. Now there's a template studio, signing inside
-                  the record or from a link sent to parents, and a background job that files every
-                  completed agreement. It went out to eight customers at once with nothing failing
-                  silently.
-                </p>
-              </article>
-              <article aria-labelledby="p-apps">
-                <h4 id="p-apps">The application builder</h4>
-                <p>
-                  Every change to an admissions application used to mean an engineer, and then
-                  someone retyped the answers. Programs now build applications with drag and drop
-                  and conditional questions; families submit on a public site that rejects
-                  duplicates, and every answer maps into the chart automatically.
-                </p>
-              </article>
-              <article aria-labelledby="p-incident">
-                <h4 id="p-incident">Incident compliance dashboard</h4>
-                <p>
-                  Trends against the previous period, team scorecards, categories, and a heatmap of
-                  day of week against hour, with a table view behind every chart. While building it
-                  I found duplicate records that had been inflating every number by about 12%. A
-                  dashboard is only as honest as its data.
-                </p>
-              </article>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -395,18 +345,26 @@
           <div class="row-content">
             <div class="prose">
               <p>
-                Brandon lives in the Salt Lake City area with his wife, Tatiana, who is the center of
-                his world, and their dog, Kiko, who is a bit of a mutt and Brandon's best friend.
+                I was born and raised in and around Salt Lake City. I grew up with a very tight
+                family and have the same friends since elementary school. Despite my closeness to the
+                people around me, I headed four hours south and attended Southern Utah University
+                where I met who would become my wife during orientation week. We bonded immediately
+                and have been inseparable since. I got really involved in school and was able to
+                network throughout the small town of Cedar City. My internship with Havenwood Academy
+                eventually turned into a full time job offer and so much more.
               </p>
               <p>
-                The three of them are happiest outdoors, and camping is their favorite way to get
-                there. Brandon usually packs a fly rod, though he'll admit the fishing is mostly an
-                excuse to be outside.
+                In my personal time I really enjoy being outside as much as possible. That includes
+                camping, hiking, golfing, fishing, and anything else that helps me enjoy the
+                beautiful state we live in. My wife and I love to travel and have been fortunate
+                enough to see so many places all over the world now. We just returned from a three
+                week trip all across Europe and plan to travel much more. My dog Kiko is also a
+                center stone in my life. He comes with us everywhere and is a big part of our family.
               </p>
               <p>
-                He and Tatiana have been fortunate to travel all over the country and, more recently,
-                the world. Before their trip through Europe, Brandon built them an app to plan it,
-                which tells you most of what you need to know about him.
+                I'm incredibly lucky to have the people I have around me and to get to enjoy life as
+                much as I do. I tell people often that I don't gamble because I've already used up
+                most of the good luck in my life.
               </p>
             </div>
 
@@ -430,24 +388,8 @@
               <div><dt>BS, Marketing and Management</dt><dd>Southern Utah University, double major</dd></div>
             </dl>
             <div class="prose prose-after">
-              <p>At SUU, Brandon served as student body vice president his senior year and was named the university's Male Contributor of the Year.</p>
-              <p>He was also a member of Sigma Chi, where he led the chapter's philanthropy for several years, raising money for cancer research.</p>
+              <p>At SUU, Brandon served as Student Body Vice President his senior year and was named the university's Male Contributor of the Year. He was also a member of Sigma Chi, where he led the chapter's philanthropy for several years, raising money for cancer research.</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section closing" aria-labelledby="throughline-title">
-      <div class="wrap">
-        <h2 id="throughline-title" class="section-title">I've been the user, the operator, the builder and the executive.</h2>
-        <div class="row row-flush">
-          <div class="row-label"></div>
-          <div class="row-content">
-            <p class="lede">
-              So I hear a problem the way the person living it does, I can see the software that
-              fixes it, and I know what it takes to build it and run the business around it.
-            </p>
           </div>
         </div>
       </div>
@@ -462,10 +404,9 @@
       <div class="row-content">
         <h2 class="item-title">Let's talk.</h2>
         <p class="contact-links">
-          <a href="mailto:paynebrandon4@gmail.com">paynebrandon4@gmail.com</a>
+          <a href="mailto:brandon@paynemarketinggroup.com">brandon@paynemarketinggroup.com</a>
           <a href="https://www.linkedin.com/in/payne-brandon">LinkedIn</a>
         </p>
-        <p class="fineprint">Brandon Payne, MBA. Salt Lake City area.</p>
       </div>
     </div>
   </footer>
