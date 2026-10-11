@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css?v=202610101915">
+  <link rel="stylesheet" href="/styles.css?v=202610111100">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -30,7 +30,7 @@
     <section class="project-hero wrap">
       <p class="crumb"><a href="/#projects">Projects</a> <span aria-hidden="true">/</span> Admissions</p>
       <h1 class="project-title">The application builder</h1>
-      <p class="lede">Every change to an admissions application used to mean an engineer, and then someone retyped the answers.</p>
+      <p class="lede">Every program's admissions application was a PDF, a web form we built for them, or both. Now the admissions team builds their own, and what families submit lands in the chart already mapped.</p>
       <dl class="project-meta">
         <div><dt>Role</dt><dd>Designed and built</dd></div>
         <div><dt>Year</dt><dd>2025</dd></div>
@@ -39,18 +39,54 @@
     </section>
 
     <figure class="project-visual wrap">
-      <div class="project-visual-placeholder motif-blocks" role="img" aria-label="Placeholder visual for The application builder"></div>
+      <p class="demo-intro">This is the real builder, running on a sample application. Search the navigator, click a field to edit it inline, drag a section, open Logic, publish. Nothing is saved.</p>
+      <div class="embed">
+        <iframe src="/demos/appbuilder/" title="Application Builder demo" loading="lazy"></iframe>
+        <a class="embed-fallback" href="/demos/appbuilder/"><img src="/assets/projects/appbuilder/builder.png" width="1171" height="774" alt="The Application Builder: a navigator of sections on the left, a canvas of field cards in the middle, and a status bar counting fields, unmapped, required and conditional"></a>
+      </div>
+      <figcaption class="embed-note"><span>On a phone, tap the picture to open the builder full screen.</span><a href="/demos/appbuilder/" target="_blank" rel="noopener">Open full screen</a></figcaption>
     </figure>
 
     <section class="section project-body">
       <div class="wrap">
         <div class="row">
           <div class="row-label">
-            <p class="label label-strong">What I built</p>
+            <p class="label label-strong">What it does</p>
           </div>
           <div class="row-content">
             <div class="prose">
-            <p>Programs now build applications with drag and drop and conditional questions; families submit on a public site that rejects duplicates, and every answer maps into the chart automatically.</p>
+            <dl class="pairs pairs-flush">
+              <div><dt>Navigator</dt><dd>The whole application as an outline. Search it, collapse it, jump to any field.</dd></div>
+              <div><dt>Canvas</dt><dd>Sections of field cards. Edit the label, required and active flags, and the chart mapping without leaving the card. Drag to reorder.</dd></div>
+              <div><dt>Logic</dt><dd>Show a question only when another answer calls for it. Forty-six of the sample's fields are conditional, and the Logic view lists every rule in one table.</dd></div>
+              <div><dt>Mapping</dt><dd>A field can point at a chart field: first name, date of birth, a parent's phone. A submission creates the inquiry record with those filled, and attaches the uploads.</dd></div>
+              <div><dt>Publish</dt><dd>Save Draft keeps working copies. Publish is what families see on the program's public site.</dd></div>
+            </dl>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="row-label">
+            <p class="label label-strong">Screens</p>
+            <p class="label">Click to enlarge.</p>
+          </div>
+          <div class="row-content">
+            <ul class="shots">
+              <li><a class="shot" href="/assets/projects/appbuilder/builder.png"><figure><img src="/assets/projects/appbuilder/builder.png" width="1171" height="774" loading="lazy" alt="The Application Builder inside BlueStep with a 123-field application loaded"><figcaption>A real application: 123 fields across eleven sections, inside the program's BlueStep site.</figcaption></figure></a></li>
+              <li><a class="shot" href="/assets/projects/appbuilder/inspector.png"><figure><img src="/assets/projects/appbuilder/inspector.png" width="1171" height="774" loading="lazy" alt="A field card expanded on the canvas, showing the question label, a Map To dropdown, and Required and Active toggles"><figcaption>Inline editing on the canvas, with the mapping dropdown right there.</figcaption></figure></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="row-label">
+            <p class="label label-strong">How it was built</p>
+          </div>
+          <div class="row-content">
+            <div class="prose">
+              <p>The builder is a single static page: one script, one stylesheet, no framework. It reads and writes a JSON template that a second component, the interpreter, renders as the public form. A post-save formula maps submissions into the record.</p>
+              <p>Because it is self-contained, the copy above is the production code, fed a sample template and a stand-in backend.</p>
             </div>
           </div>
         </div>
@@ -77,5 +113,6 @@
       </div>
     </div>
   </footer>
+  <script src="/gallery.js?v=202610111100"></script>
 </body>
 </html>

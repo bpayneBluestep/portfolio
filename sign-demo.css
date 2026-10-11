@@ -1,0 +1,102 @@
+/* Parent signing demo (Agreements project page).
+   The .sgd-* rules mirror the production signing page's styles; the document
+   pages are the real template rendered by the production designer. */
+
+.sgd-frame {
+  border: 1px solid var(--rule); border-radius: 12px; overflow: hidden;
+  background: #f4f6f9; color: #1a1a1a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px; line-height: 1.45;
+  -webkit-font-smoothing: auto;
+}
+.sgd-wrap { max-width: 760px; margin: 0 auto; padding: 18px 16px 28px; }
+.sgd-wrap *, .sgd-wrap *::before, .sgd-wrap *::after { box-sizing: border-box; }
+
+.sgd-head { text-align: center; padding: 6px 0 14px; border-bottom: 1px solid #e6e9ef; margin-bottom: 18px; }
+.sgd-org { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #7a869a; font-weight: 600; }
+.sgd-title { font: 600 20px/1.2 inherit; font-family: inherit; margin: 6px 0 4px; color: #12325a; }
+.sgd-hi { color: #55606e; font-size: 13px; margin: 0; }
+.sgd-muted { color: #7a869a; font-size: 12.5px; }
+
+.sgd-disclosure { background: #fff; border: 1px solid #e2e4e8; border-radius: 10px; padding: 18px 22px; max-width: 620px; margin: 0 auto 14px; font: 13.5px/1.6 Georgia, serif; }
+.sgd-disclosure b { display: block; font-family: inherit; margin-bottom: 6px; color: #12325a; }
+.sgd-disclosure p { margin: 0 0 8px; }
+.sgd-acts { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin: 4px 0 8px; }
+
+.sgd-btn { font: inherit; font-size: 13.5px; font-weight: 600; padding: 9px 18px; border-radius: 6px; cursor: pointer; border: 1px solid transparent; }
+.sgd-btn.primary { background: #12325a; color: #fff; }
+.sgd-btn.primary:hover { background: #0d2542; }
+.sgd-btn.primary:disabled { opacity: .5; cursor: not-allowed; }
+.sgd-btn.ghost { background: #fff; color: #4b5563; border-color: #d1d5db; }
+.sgd-btn.ghost:hover { background: #f3f4f6; }
+
+/* ---- document pages ---- */
+.sgd-doclist { background: #eceef1; padding: 12px 0 6px; border-radius: 8px; }
+.sgd-dochead { display: flex; flex-direction: column; gap: 3px; margin: 0 14px 12px; padding: 4px 2px 10px; }
+.sgd-docnum { font: 600 11px/1 Helvetica, Arial, sans-serif; letter-spacing: .09em; text-transform: uppercase; color: #8a919c; }
+.sgd-doctitle { font: 700 18px/1.25 Helvetica, Arial, sans-serif; color: #1f2937; }
+.sgd-docpages { font: 400 12px/1 Helvetica, Arial, sans-serif; color: #8a919c; }
+
+.sgd-page { position: relative; width: min(100%, 680px); margin: 0 auto 14px; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.15); container-type: inline-size; }
+.sgd-pageimg { display: block; width: 100%; height: auto; }
+.sgd-overlay { position: absolute; inset: 0; }
+
+.sgd-tab { position: absolute; display: flex; align-items: stretch; }
+.sgd-tab.mine { z-index: 2; }
+.sgd-tab input[type=text], .sgd-tab select {
+  width: 100%; height: 100%; font: inherit; font-size: 1.5cqw; border: 1.5px solid #f6c344; background: #fff8e4; border-radius: 2px; padding: 0 0.4cqw; color: #1a1a1a; min-height: 0;
+}
+.sgd-tab input[type=text]:focus, .sgd-tab select:focus { outline: 0; border-color: #2563eb; background: #fff; }
+.sgd-tab input[type=checkbox] { width: 100%; height: 100%; margin: 0; accent-color: #2563eb; cursor: pointer; }
+.sgd-ro { font-size: 1.5cqw; align-self: center; padding: 0 0.4cqw; white-space: nowrap; overflow: hidden; }
+.sgd-wait { width: 100%; font-size: 1.2cqw; font-style: italic; color: #9aa3ad; display: flex; align-items: flex-end; justify-content: center; border-bottom: 1px dashed #c7cdd6; padding-bottom: 0.3cqw; }
+.sgd-signbox { width: 100%; height: 100%; font: 600 1.5cqw/1 Helvetica, Arial, sans-serif; color: #6b4a00; cursor: pointer; background: #f6c344; border: 0; border-radius: 3px; }
+.sgd-signbox:hover { background: #f0b82a; }
+.sgd-sigtxt { align-self: flex-end; font-size: 3.2cqw; line-height: 1; color: #12325a; white-space: nowrap; padding: 0 0.3cqw; cursor: pointer; }
+.sgd-sigtxt.ini { font-size: 2.2cqw; align-self: center; margin: 0 auto; }
+.sgd-sigimg { max-width: 100%; max-height: 100%; object-fit: contain; align-self: flex-end; cursor: pointer; }
+.sgd-tab.pulse { animation: sgdpulse .9s ease 2; }
+@keyframes sgdpulse { 0%, 100% { box-shadow: none; } 50% { box-shadow: 0 0 0 5px rgba(37,99,235,.4); } }
+
+/* ---- sticky bar ---- */
+.sgd-bar { position: sticky; bottom: 0; z-index: 5; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; background: #fff; border: 1px solid #e2e4e8; border-radius: 10px; box-shadow: 0 -4px 18px rgba(0,0,0,.08); padding: 10px 14px; margin-top: 12px; }
+.sgd-consent { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; flex: 1 1 100%; cursor: pointer; padding-bottom: 8px; border-bottom: 1px solid #eceef2; }
+.sgd-consent input { margin-top: 2px; }
+.sgd-progress { font-size: 12.5px; color: #4b5563; flex: 1; }
+
+/* ---- done ---- */
+.sgd-done { max-width: 560px; margin: 24px auto 8px; text-align: center; padding: 28px 24px; background: #fff; border: 1px solid #e2e6ec; border-radius: 10px; }
+.sgd-done h4 { margin: 0 0 8px; font: 600 19px/1.25 inherit; font-family: inherit; color: #12325a; }
+.sgd-done p { color: #55606e; font-size: 14px; margin: 0 0 10px; }
+.sgd-done ol { text-align: left; color: #37424f; font-size: 13.5px; line-height: 1.5; margin: 0 auto 18px; padding-left: 22px; max-width: 440px; }
+.sgd-done ol li { margin: 4px 0; }
+.sgd-check { width: 44px; height: 44px; margin: 0 auto 12px; border-radius: 50%; background: #e6f4ec; color: #16794c; font: 700 22px/44px Helvetica, Arial, sans-serif; }
+
+/* ---- adopt-signature modal ---- */
+.sgd-modal-back { position: fixed; inset: 0; z-index: 9000; background: rgba(17,24,39,.55); display: flex; align-items: center; justify-content: center; padding: 20px; }
+.sgd-modal { width: 100%; max-width: 620px; background: #fff; color: #1a1a1a; border-radius: 10px; box-shadow: 0 24px 60px rgba(0,0,0,.3); padding: 22px 24px 18px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 14px; }
+.sgd-modal *, .sgd-modal *::before, .sgd-modal *::after { box-sizing: border-box; }
+.sgd-modal-h { font-size: 17px; font-weight: 700; margin-bottom: 14px; }
+.sgd-tabs { display: flex; gap: 4px; border-bottom: 1px solid #e5e5e5; margin-bottom: 16px; }
+.sgd-tabbtn { font: inherit; font-size: 13px; font-weight: 600; padding: 8px 16px; border: 0; background: none; cursor: pointer; color: #6b7280; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.sgd-tabbtn.active { color: #12325a; border-bottom-color: #12325a; }
+.sgd-lbl { display: block; font-size: 12px; font-weight: 600; color: #4b5563; margin-bottom: 5px; }
+.sgd-name { width: 100%; font: inherit; font-size: 15px; padding: 9px 12px; border: 1px solid #d1d5db; border-radius: 6px; margin-bottom: 14px; }
+.sgd-name:focus { outline: 0; border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,.15); }
+.sgd-faces { display: flex; flex-direction: column; gap: 8px; }
+.sgd-face { font: inherit; text-align: left; cursor: pointer; padding: 10px 16px; min-height: 62px; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; display: flex; align-items: center; color: #12325a; }
+.sgd-face span { font-size: 32px; line-height: 1.25; overflow: hidden; white-space: nowrap; }
+.sgd-face:hover { border-color: #c7cdd6; background: #fafbfc; }
+.sgd-face.active { border-color: #12325a; box-shadow: 0 0 0 2px rgba(18,50,90,.12); }
+.sgd-face-name { flex: 1 1 auto; }
+.sgd-face-ini { flex: 0 0 auto; min-width: 52px; text-align: center; border: 1px dashed #c7cdd6; border-radius: 6px; padding: 0 10px; margin-left: 12px; }
+.sgd-hint { font-size: 11.5px; color: #6b7280; margin-top: 6px; }
+.sgd-pad { width: 100%; height: 150px; display: block; border: 1px dashed #c7cdd6; border-radius: 8px; background: #fcfcfd; touch-action: none; cursor: crosshair; }
+.sgd-clear { font: inherit; font-size: 12px; color: #6b7280; background: none; border: 0; padding: 8px 0 0; cursor: pointer; text-decoration: underline; }
+.sgd-modal-f { display: flex; justify-content: flex-end; gap: 8px; margin-top: 18px; }
+
+@media (max-width: 560px) {
+  .sgd-modal { padding: 18px 16px 14px; }
+  .sgd-face span { font-size: 26px; }
+  .sgd-wrap { padding: 14px 10px 22px; }
+}

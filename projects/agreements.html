@@ -10,8 +10,9 @@
   <meta name="description" content="E-signature inside the chart: a template studio, signing from the record or a parent link, and automatic filing.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css?v=202610101915">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Dancing+Script:wght@600&family=Great+Vibes&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=202610111100">
+  <link rel="stylesheet" href="/sign-demo.css?v=202610111100">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -30,27 +31,78 @@
     <section class="project-hero wrap">
       <p class="crumb"><a href="/#projects">Projects</a> <span aria-hidden="true">/</span> E-signature</p>
       <h1 class="project-title">Agreements</h1>
-      <p class="lede">Programs were paying for a separate e-signature service, then copying signed documents into the chart by hand.</p>
+      <p class="lede">Programs were paying for a separate e-signature service, then copying signed documents into the chart by hand. Now the paperwork lives where the record does.</p>
       <dl class="project-meta">
         <div><dt>Role</dt><dd>Designed and built</dd></div>
         <div><dt>Year</dt><dd>2025</dd></div>
-        <div><dt>Status</dt><dd>Live</dd></div>
+        <div><dt>Status</dt><dd>Live at eight programs</dd></div>
       </dl>
     </section>
 
     <figure class="project-visual wrap">
-      <div class="project-visual-placeholder motif-lines" role="img" aria-label="Placeholder visual for Agreements"></div>
+      <a class="shot" href="/assets/projects/agreements/designer.png" data-caption="The template designer: the program's own PDF, with fields placed by role.">
+        <img class="shot-hero" src="/assets/projects/agreements/designer.png" width="1171" height="774" alt="The Agreement Studio designer showing a two-page admission agreement with text, dropdown, checkbox and initials fields placed on it, a roles panel on the left, and a field properties popover">
+      </a>
+      <figcaption class="project-visual-caption">The template designer. Pick a field type, click the page, assign it to a signer. The document is the program's own PDF, untouched.</figcaption>
     </figure>
 
     <section class="section project-body">
       <div class="wrap">
         <div class="row">
           <div class="row-label">
-            <p class="label label-strong">What I built</p>
+            <p class="label label-strong">Try it</p>
+            <p class="label">Sign the admission agreement the way a parent does, from the link in their email. Nothing is sent anywhere.</p>
+          </div>
+          <div class="row-content">
+            <figure class="demo" aria-label="Interactive demo of parent signing">
+              <div class="demo-frame sgd-frame">
+                <div id="sgd" class="sgd-wrap"></div>
+              </div>
+              <figcaption class="demo-foot"><span>The same screens as the production signing page. Yellow boxes are yours; the Academy signs after you.</span></figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="row-label">
+            <p class="label label-strong">What it does</p>
           </div>
           <div class="row-content">
             <div class="prose">
-            <p>Now there's a template studio, signing inside the record or from a link sent to parents, and a background job that files every completed agreement. It went out to eight customers at once with nothing failing silently.</p>
+            <dl class="pairs pairs-flush">
+              <div><dt>Template studio</dt><dd>Upload the PDF the program already uses. Place the fields once. Publish. Each facility keeps its own library.</dd></div>
+              <div><dt>Packets from the record</dt><dd>Pick the documents a family needs to sign. Roles that repeat across documents collapse into one signer. Send by email, sign in the app, or hand over a tablet.</dd></div>
+              <div><dt>Signing on a phone</dt><dd>A disclosure, the fields, a typed or drawn signature, and a six-digit code when the sender wants one. Progress saves as they go.</dd></div>
+              <div><dt>Filing</dt><dd>When the last signature lands, the PDF is stamped, a certificate of completion is attached, copies go out by email, and the agreement is filed in the record. Nobody touches it.</dd></div>
+            </dl>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="row-label">
+            <p class="label label-strong">Screens</p>
+            <p class="label">Click any screen to enlarge. All data is demo data.</p>
+          </div>
+          <div class="row-content">
+            <ul class="shots">
+              <li><a class="shot" href="/assets/projects/agreements/studio-list.png"><figure><img src="/assets/projects/agreements/studio-list.png" width="1179" height="570" loading="lazy" alt="Agreement templates library listing six templates with status, documents, fields and version columns"><figcaption>The template library. Status is a control: a template can only go Active once it has a document and a placed field.</figcaption></figure></a></li>
+              <li><a class="shot" href="/assets/projects/agreements/wizard-documents.png"><figure><img src="/assets/projects/agreements/wizard-documents.png" width="1171" height="774" loading="lazy" alt="New packet wizard, documents step, with two templates checked"><figcaption>Building a packet from a client's record: pick the documents.</figcaption></figure></a></li>
+              <li><a class="shot" href="/assets/projects/agreements/wizard-recipients.png"><figure><img src="/assets/projects/agreements/wizard-recipients.png" width="1171" height="774" loading="lazy" alt="New packet wizard, recipients step, showing a Parent / Guardian role and a Client role with name, email, signing method and order"><figcaption>Recipients. The Parent role appears in both documents, so it is filled once.</figcaption></figure></a></li>
+              <li><a class="shot" href="/assets/projects/agreements/record-tab.png"><figure><img src="/assets/projects/agreements/record-tab.png" width="1171" height="774" loading="lazy" alt="A client record with the Agreements tab showing one completed packet"><figcaption>Every packet lives on the client's record, next to everything else.</figcaption></figure></a></li>
+              <li><a class="shot" href="/assets/projects/agreements/envelope-details.png"><figure><img src="/assets/projects/agreements/envelope-details.png" width="720" height="700" loading="lazy" alt="Packet details dialog showing four signed documents, two recipients, a certificate of completion and a nine-step audit trail"><figcaption>A completed packet: signed copies, recipients, certificate, audit trail.</figcaption></figure></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="row-label">
+            <p class="label label-strong">How it was built</p>
+          </div>
+          <div class="row-content">
+            <div class="prose">
+              <p>Three merge reports and two endpoints in TypeScript on BlueStep. The browser renders pages with pdf.js and the server stamps signatures with pdf-lib. A scheduled sweep sends reminders and expires stale links.</p>
+              <p>It shipped to eight organizations by script, with a read-only audit after each one, so nothing failed silently.</p>
             </div>
           </div>
         </div>
@@ -77,5 +129,7 @@
       </div>
     </div>
   </footer>
+  <script src="/sign-demo.js?v=202610111100"></script>
+  <script src="/gallery.js?v=202610111100"></script>
 </body>
 </html>
