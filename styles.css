@@ -305,7 +305,6 @@ a:hover { text-decoration-thickness: 2px; }
 .card-visual { aspect-ratio: 16 / 10; background: var(--night); }
 .card-visual img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .card-body { padding: 20px 22px 24px; display: flex; flex-direction: column; flex: 1; }
-.card-kicker { margin: 0 0 8px; font-family: var(--sans); font-size: var(--t-small); font-weight: 600; color: var(--blue); }
 .card-title { margin: 0 0 8px; font-size: 1.5rem; font-weight: 500; line-height: 1.15; letter-spacing: -0.015em; }
 .card-text { margin: 0; font-size: 1.0625rem; line-height: 1.5; color: var(--muted); }
 .card-more { margin: 18px 0 0; padding-top: 14px; border-top: 1px solid var(--rule); font-family: var(--sans); font-size: var(--t-small); font-weight: 500; color: var(--blue); margin-top: auto; }
