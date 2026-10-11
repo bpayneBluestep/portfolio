@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BlueIQ - Brandon Payne</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="description" content="AI dictation, a chatbot over the chart, and daily summaries, built into the tools staff already use.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=202610101915">
+  <link rel="stylesheet" href="/demo.css?v=202610101915">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header wrap">
+    <a class="brand" href="/">Brandon Payne</a>
+    <nav aria-label="Primary">
+      <a href="/#story">Story</a>
+      <a href="/#projects">Projects</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="project-hero wrap">
+      <p class="crumb"><a href="/#projects">Projects</a> <span aria-hidden="true">/</span> AI</p>
+      <h1 class="project-title">BlueIQ</h1>
+      <p class="lede">BlueIQ is the brand behind BlueStep's AI initiatives. Baked directly into the tools that our users already have, we've built a series of features powered by HIPAA compliant LLMs to make charting and delivering care easier.</p>
+      <dl class="project-meta">
+        <div><dt>Role</dt><dd>Product owner, designer, engineer</dd></div>
+        <div><dt>Year</dt><dd>2025</dd></div>
+        <div><dt>Status</dt><dd>Live</dd></div>
+      </dl>
+    </section>
+
+    <figure class="project-visual wrap">
+      <figure class="demo" aria-label="Interactive demo of Record with BlueIQ">
+        <p class="demo-intro">Try it. Press Record with BlueIQ, then Record. No microphone needed; the recording is simulated.</p>
+        <div id="biq-demo" class="demo-frame">
+          <div class="bs-bar">
+            <span class="bs-bar-title">Shift Notes</span>
+            <span class="bs-bar-meta">Demo Student, Evening shift</span>
+          </div>
+          <div class="bs-form">
+            <div class="bs-card">
+              <div class="bs-row">
+                <div class="bs-label">BlueIQ</div>
+                <div class="bs-value">
+                  <div class="biq-root">
+                    <button type="button" class="biq-launch"><span class="biq-launch-spark"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/></svg></span><span class="biq-launch-label">Record with <span class="biq-brand">BlueIQ</span></span></button>
+                  </div>
+                </div>
+              </div>
+              <div class="bs-row">
+                <div class="bs-label">Summary</div>
+                <div class="bs-value"><div class="bs-field" data-field="summary" data-placeholder="What happened this shift"></div></div>
+              </div>
+              <div class="bs-row">
+                <div class="bs-label">Strengths</div>
+                <div class="bs-value"><div class="bs-field" data-field="strengths" data-placeholder="What went well"></div></div>
+              </div>
+              <div class="bs-row">
+                <div class="bs-label">Concerns</div>
+                <div class="bs-value"><div class="bs-field" data-field="concerns" data-placeholder="Anything the team should know"></div></div>
+              </div>
+            </div>
+            <div class="bs-actions"><button type="button" class="bs-save" disabled>Save</button></div>
+          </div>
+      
+          <div class="biq-overlay" hidden>
+            <div class="biq-panel" role="dialog" aria-modal="true" aria-label="BlueIQ Shift Note">
+              <div class="biq-panel-head">
+                <div class="biq-panel-title"><span class="biq-live-dot"></span><span><span class="biq-brand">BlueIQ</span> Shift Note</span></div>
+                <button type="button" class="biq-collapse" aria-label="Close">&times;</button>
+              </div>
+              <div class="biq-panel-body">
+                <p class="biq-hint">Speak your shift notes for this student. When you stop, BlueIQ fills the <strong>Summary</strong>, <strong>Strengths</strong>, and <strong>Concerns</strong> boxes from what you said. Review and edit before saving.</p>
+                <div class="biq-controls">
+                  <button type="button" id="biq-record" class="biq-btn"><span class="biq-dot"></span><span class="biq-btn-label">Record</span></button>
+                  <button type="button" id="biq-rerecord" class="biq-btn is-secondary" hidden><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 4v6h6"/><path d="M3.5 9a9 9 0 1 1-.5 5"/></svg><span>Re-record</span></button>
+                  <span class="biq-timer">00:00</span>
+                  <div class="biq-viz" aria-hidden="true"></div>
+                  <span class="biq-status" role="status">Idle</span>
+                </div>
+                <div class="biq-transcript-wrap" hidden>
+                  <div class="biq-label">What BlueIQ heard (not shown on the saved note)</div>
+                  <div class="biq-transcript"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <figcaption class="demo-foot">
+          <span>The same interface as the production feature, with an invented note.</span>
+          <button type="button" id="biq-replay" class="demo-replay" hidden>Replay</button>
+        </figcaption>
+      </figure>
+    </figure>
+
+    <section class="section project-body">
+      <div class="wrap">
+        <div class="row">
+          <div class="row-label">
+            <p class="label label-strong">What it does</p>
+          </div>
+          <div class="row-content">
+            <div class="prose">
+            <dl class="pairs pairs-flush">
+              <div><dt>Record with BlueIQ</dt><dd>Staff dictate in the browser, and the note comes back in the behavior, intervention and response structure insurers look for.</dd></div>
+              <div><dt>Patient Record Chatbot</dt><dd>Ask plain English questions about a patient and have your chatbot query through the patient's record, delivering answers and citing its sources along the way.</dd></div>
+              <div><dt>The daily milieu summary</dt><dd>Every morning leadership gets a plain-language recap of the previous day, helping them jumpstart on any problems they need to tackle.</dd></div>
+              <div><dt>Utilization review drafts</dt><dd>An AI powered narrative delivered to insurance companies, helping justify their levels of care. Sheds hours of time for clinicians from doing paperwork and fighting insurance companies.</dd></div>
+            </dl>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label">
+            <p class="label label-strong">Try it</p>
+            <p class="label">The demo above is the same interface as the production feature, with an invented note.</p>
+          </div>
+          <div class="row-content">
+            <div class="prose">
+            <p>Press <strong>Record with BlueIQ</strong>, then <strong>Record</strong>. No microphone is needed; the recording is simulated. When it stops, BlueIQ fills the Summary, Strengths and Concerns boxes from what was said.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="project-nav wrap" aria-label="More projects">
+      <a class="project-nav-link" href="/projects/outcomes-platform.html"><span class="label">Previous</span><span class="project-nav-title">An outcomes platform</span></a>
+      <a class="project-nav-link is-next" href="/projects/referral-marketplace.html"><span class="label">Next</span><span class="project-nav-title">The referral marketplace</span></a>
+    </nav>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="wrap row row-flush">
+      <div class="row-label">
+        <p class="label label-strong">Contact</p>
+      </div>
+      <div class="row-content">
+        <h2 class="item-title">Let's talk.</h2>
+        <p class="contact-links">
+          <a href="mailto:brandon@paynemarketinggroup.com">brandon@paynemarketinggroup.com</a>
+          <a href="https://www.linkedin.com/in/payne-brandon">LinkedIn</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="/demo.js?v=202610101915"></script>
+</body>
+</html>

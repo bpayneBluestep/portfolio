@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The referral marketplace - Brandon Payne</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="description" content="A shared layer between consultant CRMs and program CRMs, so referrals, openings and outcomes flow both ways.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=202610101915">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header wrap">
+    <a class="brand" href="/">Brandon Payne</a>
+    <nav aria-label="Primary">
+      <a href="/#story">Story</a>
+      <a href="/#projects">Projects</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="project-hero wrap">
+      <p class="crumb"><a href="/#projects">Projects</a> <span aria-hidden="true">/</span> Marketplace</p>
+      <h1 class="project-title">The referral marketplace</h1>
+      <p class="lede">Educational consultants place families with programs, and programs live on those referrals. But everything between the two happens over phone calls and email.</p>
+      <dl class="project-meta">
+        <div><dt>Role</dt><dd>Product design</dd></div>
+        <div><dt>Year</dt><dd>2026</dd></div>
+        <div><dt>Status</dt><dd>In design</dd></div>
+      </dl>
+    </section>
+
+    <figure class="project-visual wrap">
+      <figure class="market" aria-label="Diagram: a consultant CRM and a program CRM, with referrals flowing to programs, and availability and outcomes flowing back to consultants">
+        <svg viewBox="0 0 640 220" role="img" aria-hidden="true">
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+            </marker>
+          </defs>
+          <rect x="1" y="40" width="190" height="140" rx="10" class="node"/>
+          <text x="96" y="104" class="node-title" text-anchor="middle">Consultant</text>
+          <text x="96" y="128" class="node-sub" text-anchor="middle">CRM</text>
+          <rect x="449" y="40" width="190" height="140" rx="10" class="node"/>
+          <text x="544" y="104" class="node-title" text-anchor="middle">Program</text>
+          <text x="544" y="128" class="node-sub" text-anchor="middle">CRM</text>
+          <line x1="200" y1="78" x2="440" y2="78" class="flow" marker-end="url(#arrow)"/>
+          <text x="320" y="66" class="flow-label" text-anchor="middle">Referrals</text>
+          <line x1="440" y1="122" x2="200" y2="122" class="flow" marker-end="url(#arrow)"/>
+          <text x="320" y="112" class="flow-label" text-anchor="middle">Openings</text>
+          <line x1="440" y1="162" x2="200" y2="162" class="flow" marker-end="url(#arrow)"/>
+          <text x="320" y="152" class="flow-label" text-anchor="middle">Outcomes</text>
+        </svg>
+      </figure>
+      <figcaption class="project-visual-caption">A consultant CRM and a program CRM, with referrals flowing to programs, and availability and outcomes flowing back to consultants.</figcaption>
+    </figure>
+
+    <section class="section project-body">
+      <div class="wrap">
+        <div class="row">
+          <div class="row-label">
+            <p class="label label-strong">The idea</p>
+          </div>
+          <div class="row-content">
+            <div class="prose">
+            <p>Each side tracks the relationship in its own CRM: who has a bed open, who fits this kid, how the last placement turned out. I'm designing the layer that connects them. The referral becomes a shared record both sides can see and act on, and openings and outcomes flow back so consultants can place families with real evidence.</p>
+            <p>The hard part is the same as in any two-sided product: each side needs its own view of the same truth, and neither should see what isn't theirs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="project-nav wrap" aria-label="More projects">
+      <a class="project-nav-link" href="/projects/blueiq.html"><span class="label">Previous</span><span class="project-nav-title">BlueIQ</span></a>
+      <a class="project-nav-link is-next" href="/projects/modular-platform.html"><span class="label">Next</span><span class="project-nav-title">One product, many programs</span></a>
+    </nav>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="wrap row row-flush">
+      <div class="row-label">
+        <p class="label label-strong">Contact</p>
+      </div>
+      <div class="row-content">
+        <h2 class="item-title">Let's talk.</h2>
+        <p class="contact-links">
+          <a href="mailto:brandon@paynemarketinggroup.com">brandon@paynemarketinggroup.com</a>
+          <a href="https://www.linkedin.com/in/payne-brandon">LinkedIn</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

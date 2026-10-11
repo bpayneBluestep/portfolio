@@ -280,3 +280,71 @@ a:hover { text-decoration-thickness: 2px; }
   body { font-size: 1.0625rem; }
   .site-header nav { gap: 16px; }
 }
+
+/* ==========================================================================
+   Projects: card grid on the home page, one page per project
+   ========================================================================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: clamp(20px, 3vw, 40px);
+  padding-bottom: var(--space-section);
+}
+.card {
+  display: flex; flex-direction: column;
+  color: inherit; text-decoration: none;
+  background: #fff;
+  border: 1px solid var(--rule); border-radius: 12px; overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.card:hover, .card:focus-visible { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(15, 29, 69, 0.12); border-color: transparent; }
+.card-visual { aspect-ratio: 16 / 10; background: var(--night); }
+.card-visual img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.card-body { padding: 20px 22px 24px; display: flex; flex-direction: column; flex: 1; }
+.card-kicker { margin: 0 0 8px; font-family: var(--sans); font-size: var(--t-small); font-weight: 600; color: var(--blue); }
+.card-title { margin: 0 0 8px; font-size: 1.5rem; font-weight: 500; line-height: 1.15; letter-spacing: -0.015em; }
+.card-text { margin: 0; font-size: 1.0625rem; line-height: 1.5; color: var(--muted); }
+.card-more { margin: 18px 0 0; padding-top: 14px; border-top: 1px solid var(--rule); font-family: var(--sans); font-size: var(--t-small); font-weight: 500; color: var(--blue); margin-top: auto; }
+.card-more::after { content: " \2192"; }
+
+/* Placeholder motifs: night background, blue-tinted geometry. Swap for an <img> when screenshots exist. */
+.motif-spark  { background: radial-gradient(circle at 50% 50%, rgba(43,80,216,0.9) 0 6%, transparent 6.5%), radial-gradient(circle at 50% 50%, transparent 0 18%, rgba(169,179,214,0.25) 18.5% 19.5%, transparent 20%), radial-gradient(circle at 50% 50%, transparent 0 30%, rgba(169,179,214,0.18) 30.5% 31.5%, transparent 32%), var(--night); }
+.motif-flow   { background: linear-gradient(90deg, transparent 0 22%, rgba(169,179,214,0.5) 22% 24%, transparent 24% 76%, rgba(169,179,214,0.5) 76% 78%, transparent 78%), repeating-linear-gradient(0deg, transparent 0 22px, rgba(43,80,216,0.55) 22px 24px), var(--night); background-size: 100% 100%, 100% 72px; background-position: 0 0, 0 50%; background-repeat: no-repeat, repeat-x; }
+.motif-grid   { background: repeating-linear-gradient(0deg, rgba(169,179,214,0.22) 0 1px, transparent 1px 28px), repeating-linear-gradient(90deg, rgba(169,179,214,0.22) 0 1px, transparent 1px 28px), linear-gradient(135deg, rgba(43,80,216,0.55), transparent 60%), var(--night); }
+.motif-lines  { background: repeating-linear-gradient(0deg, transparent 0 18px, rgba(169,179,214,0.35) 18px 19px), linear-gradient(90deg, rgba(43,80,216,0.6) 0 30%, transparent 30%), var(--night); background-size: 60% 100%, 100% 100%, 100% 100%; background-position: 20% 0, 0 0, 0 0; background-repeat: no-repeat; }
+.motif-blocks { background: linear-gradient(rgba(43,80,216,0.75), rgba(43,80,216,0.75)) 12% 20% / 30% 22% no-repeat, linear-gradient(rgba(169,179,214,0.35), rgba(169,179,214,0.35)) 12% 60% / 55% 10% no-repeat, linear-gradient(rgba(169,179,214,0.35), rgba(169,179,214,0.35)) 12% 80% / 76% 10% no-repeat, var(--night); }
+.motif-bars   { background: linear-gradient(rgba(43,80,216,0.8), rgba(43,80,216,0.8)) 18% 100% / 9% 45% no-repeat, linear-gradient(rgba(43,80,216,0.8), rgba(43,80,216,0.8)) 34% 100% / 9% 70% no-repeat, linear-gradient(rgba(43,80,216,0.8), rgba(43,80,216,0.8)) 50% 100% / 9% 30% no-repeat, linear-gradient(rgba(43,80,216,0.8), rgba(43,80,216,0.8)) 66% 100% / 9% 80% no-repeat, linear-gradient(rgba(43,80,216,0.8), rgba(43,80,216,0.8)) 82% 100% / 9% 55% no-repeat, var(--night); }
+.motif-dots   { background: radial-gradient(circle, rgba(169,179,214,0.55) 0 2px, transparent 2.5px) 0 0 / 22px 22px, linear-gradient(160deg, rgba(43,80,216,0.5), transparent 55%), var(--night); }
+.motif-rings  { background: radial-gradient(circle at 70% 50%, transparent 0 12%, rgba(43,80,216,0.8) 12.5% 15%, transparent 15.5% 24%, rgba(169,179,214,0.35) 24.5% 26%, transparent 26.5% 36%, rgba(169,179,214,0.2) 36.5% 37.5%, transparent 38%), var(--night); }
+
+/* Project page */
+.project-hero { padding-top: clamp(32px, 6vh, 72px); padding-bottom: var(--space-row); }
+.crumb { margin: 0 0 20px; font-family: var(--sans); font-size: var(--t-small); color: var(--muted); }
+.crumb a { color: var(--muted); text-decoration: none; }
+.crumb a:hover { color: var(--ink); }
+.crumb span { margin: 0 8px; }
+.project-title {
+  margin: 0 0 20px; max-width: 16ch;
+  font-size: var(--t-section); font-weight: 400; line-height: 1.05; letter-spacing: -0.025em;
+}
+.project-hero .lede { max-width: 40rem; }
+.project-meta { display: flex; flex-wrap: wrap; gap: 12px 48px; margin: 0; }
+.project-meta div { margin: 0; }
+.project-meta dt { margin: 0 0 2px; font-family: var(--sans); font-size: var(--t-small); font-weight: 600; color: var(--blue); }
+.project-meta dd { margin: 0; font-family: var(--sans); font-size: var(--t-small); color: var(--muted); }
+.project-visual { margin: 0 auto; }
+.project-visual > .demo, .project-visual > .market { margin: 0; max-width: 100%; }
+.project-visual-placeholder { aspect-ratio: 16 / 7; border-radius: 12px; }
+.project-visual-caption { margin: 12px 0 0; font-family: var(--sans); font-size: var(--t-small); color: var(--muted); }
+.project-body { margin-top: var(--space-row); }
+.project-body .row:first-child { border-top: none; padding-top: 0; }
+.project-nav { display: grid; grid-template-columns: 1fr 1fr; gap: var(--col-gap); padding-top: var(--space-row); padding-bottom: var(--space-section); }
+.project-nav-link { display: flex; flex-direction: column; gap: 6px; color: inherit; text-decoration: none; padding-top: 20px; border-top: 1px solid var(--rule); }
+.project-nav-link.is-next { text-align: right; }
+.project-nav-title { font-size: 1.35rem; line-height: 1.2; }
+.project-nav-link:hover .project-nav-title { color: var(--blue); }
+
+@media (max-width: 720px) {
+  .project-nav { grid-template-columns: 1fr; }
+  .project-nav-link.is-next { text-align: left; }
+}
