@@ -131,6 +131,7 @@ a:hover { text-decoration-thickness: 2px; }
 .band { background: var(--night); color: var(--night-ink); padding: var(--space-row) 0; }
 .band .section-title { margin: 0; }
 .section-band > .wrap > .row:first-child { border-top: none; }
+.section-band > .wrap > .cards { padding-top: var(--space-row); }
 
 /* The row: label column + content column */
 .row {
