@@ -125,6 +125,13 @@ a:hover { text-decoration-thickness: 2px; }
   letter-spacing: -0.025em;
 }
 
+/* Dark title bands: the section title sits in a full-bleed night band,
+   the rows below start without a rule so the band does the separating. */
+.section-band { border-top: none; padding-top: 0; }
+.band { background: var(--night); color: var(--night-ink); padding: var(--space-row) 0; }
+.band .section-title { margin: 0; }
+.section-band > .wrap > .row:first-child { border-top: none; }
+
 /* The row: label column + content column */
 .row {
   display: grid;
